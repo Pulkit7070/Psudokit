@@ -38,34 +38,46 @@ export default function BackgroundMusic() {
         setIsPlaying(true)
         setHasStarted(true)
         retryCountRef.current = 0
-        console.log('🎵 Background music started successfully')
+        if (process.env.NODE_ENV === 'development') {
+          console.log('🎵 Background music started successfully')
+        }
         
         // Apply smooth fade-in for cleaner audio experience
         sound.fade(0, 0.05, 2000)
       },
       onplayerror: (id: number, error: unknown) => {
-        console.log('Play error:', error)
+        if (process.env.NODE_ENV === 'development') {
+          console.log('Play error:', error)
+        }
         retryCountRef.current++
         
         if (retryCountRef.current <= maxRetries) {
-          console.log(`Retry attempt ${retryCountRef.current}/${maxRetries}`)
+          if (process.env.NODE_ENV === 'development') {
+            console.log(`Retry attempt ${retryCountRef.current}/${maxRetries}`)
+          }
           
           // Wait for unlock event and try again
           const delay = Math.pow(2, retryCountRef.current) * 1000
           sound.once('unlock', () => {
             setTimeout(() => {
               if (!hasStarted) {
-                console.log(`Retrying after ${delay}ms delay`)
+                if (process.env.NODE_ENV === 'development') {
+                  console.log(`Retrying after ${delay}ms delay`)
+                }
                 sound.play()
               }
             }, delay)
           })
         } else {
-          console.log('Max retries reached, waiting for user interaction')
+          if (process.env.NODE_ENV === 'development') {
+            console.log('Max retries reached, waiting for user interaction')
+          }
         }
       },
       onloaderror: (id: number, error: unknown) => {
-        console.log('Load error:', error)
+        if (process.env.NODE_ENV === 'development') {
+          console.log('Load error:', error)
+        }
       }
     })
 
@@ -80,7 +92,9 @@ export default function BackgroundMusic() {
         sound.fade(0, 0.05, 2000) // Fade to very low volume over 2 seconds
         return true
       } catch {
-        console.log('Autoplay blocked, waiting for user interaction...')
+        if (process.env.NODE_ENV === 'development') {
+          console.log('Autoplay blocked, waiting for user interaction...')
+        }
         return false
       }
     }
@@ -90,13 +104,17 @@ export default function BackgroundMusic() {
       if (!hasStarted && !isPlaying) {
         // First try to unlock the audio context
         sound.once('unlock', () => {
-          console.log('🎵 Audio unlocked, attempting to play')
+          if (process.env.NODE_ENV === 'development') {
+            console.log('🎵 Audio unlocked, attempting to play')
+          }
           try {
             sound.volume(0)
             sound.play()
             sound.fade(0, 0.05, 2000) // Smooth fade-in to very low volume
           } catch {
-            console.log('Still blocked after unlock')
+            if (process.env.NODE_ENV === 'development') {
+              console.log('Still blocked after unlock')
+            }
           }
         })
         
@@ -106,7 +124,9 @@ export default function BackgroundMusic() {
           sound.play()
           sound.fade(0, 0.05, 2000) // Smooth fade-in to very low volume
         } catch {
-          console.log('Triggering unlock mechanism')
+          if (process.env.NODE_ENV === 'development') {
+            console.log('Triggering unlock mechanism')
+          }
         }
       }
     }
