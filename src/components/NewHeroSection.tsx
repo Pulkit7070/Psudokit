@@ -1,6 +1,5 @@
 'use client'
 
-import Link from 'next/link'
 import DiagonalPattern from './DiagonalPattern'
 import BannerSection from './BannerSection'
 import ProfileHeader from './ProfileHeader'
@@ -71,7 +70,7 @@ export default function NewHeroSection() {
               <Reveal delay={0.1} duration={0.6} amount={0.3}>
                 <ContentSection className="pb-8 pt-6">
                   <ContentParagraph className="mt-6 mb-6">
-                    I&apos;m probably not the developer you&apos;re expecting. I&apos;d much rather be shipping something meaningful on chain, coffee in hand, than losing sleep debugging someone else&apos;s code at 3 AM. My focus these days is deep in Web3 and AI. I&apos;m all about building smarter, faster systems that actually get the job done, not just sound impressive. I love building tech that feels effortless, even if it&apos;s powered by complex logic behind the scenes.
+                    I&apos;m probably not the developer you&apos;re expecting. I&apos;d much rather be shipping something meaningful on chain, sipping coffee, than losing sleep debugging someone else&apos;s code at 3 AM. My focus these days is deep in Web3 and AI. I&apos;m all about building smarter, faster systems that actually get the job done, not just sound impressive. I love building tech that feels effortless, even if it&apos;s powered by complex logic behind the scenes.
                   </ContentParagraph>
 
                   <ContentParagraph className="mb-4">
@@ -106,19 +105,19 @@ export default function NewHeroSection() {
                   <h2 className="text-lg sm:text-xl mb-4 opacity-20 mt-8">Technical Contributions</h2>
                   <div className="space-y-6 dark:text-white/70 text-black/70 pb-8">
                     <ContentParagraph>
-                      <span className="font-medium dark:text-white text-black">At Turbo ML,</span> I spent 3 months building some pretty cool stuff. Think Redis Sorted Sets handling time-based tasks under 24-hour constraints, WhatsApp Business API integrations with custom commands, and secure MCP protocols using hash-based user identification. The kind of work that keeps you up at night because it&apos;s actually interesting.
+                      <span className="font-medium dark:text-white text-black">At Rabbit AI,</span> I worked as the lead engineer architecting <span className="font-medium dark:text-white text-black">agent-based inference systems</span>. Built end-to-end GenAI pipelines with multi-step reasoning, RAG (Retrieval-Augmented Generation) for context-aware responses, and agentic workflows that decompose complex tasks into sequential execution chains.  
                     </ContentParagraph>
                     <ContentParagraph>
-                      <span className="font-medium dark:text-white text-black">Here&apos;s where it gets interesting </span> I reverse engineered Blinkit and Swiggy APIs to understand their data structures and endpoints, then created an AI agent that could intelligently route food delivery and grocery orders. Not your typical API integration tutorial this was about understanding how these platforms really work under the hood and building something smarter on top of it.
+                      <span className="font-medium dark:text-white text-black">Offline P2P protocol.</span> Designed and implemented a <span className="font-medium dark:text-white text-black">peer-to-peer data transfer protocol</span> using QR-based packet streaming with <span className="font-medium dark:text-white text-black">Reed-Solomon error correction</span> and collision detection. Built custom packetization layer that fragments data into chunks, serializes with error-checking headers, transmits via sequential QR frames at 60fps, and reconstructs on the receiving end with <span className="font-medium dark:text-white text-black">CRC32 validation</span>. Zero network dependency. Pure offline communication.
                     </ContentParagraph>
                     <ContentParagraph>
-                      <span className="font-medium dark:text-white text-black">At Lamarr —</span> Resolved 10+ critical issues in a month maintaining 99.9% uptime. Built Greenhouse integrations, browser video recording, and WhatsApp/email API connections. When systems break at 3 AM, you learn optimization fast.
+                      <span className="font-medium dark:text-white text-black">Automated trading engine.</span> Developed a fully autonomous <span className="font-medium dark:text-white text-black">crypto trading bot</span> with real-time WebSocket connections to exchange APIs, , position sizing algorithms, and <span className="font-medium dark:text-white text-black">risk management protocols</span>. System handles order execution, portfolio rebalancing, and PnL tracking with <span className="font-medium dark:text-white text-black">millisecond-level latency</span>. All logic runs autonomously based on predefined strategies.
                     </ContentParagraph>
                     <ContentParagraph>
-                      <span className="font-medium dark:text-white text-black">
-                        <Link href="https://github.com/KartikLabhshetwar" target='_blank' className="text-[#006FEE] hover:underline">0→1</Link> product development
-                      </span>
-                      <span> specialist for startups and personal projects. Faster iterations, clearer outcomes.</span>
+                      <span className="font-medium dark:text-white text-black">Cross-chain development.</span> I&apos;ve shipped production smart contracts and dApps across <span className="font-medium dark:text-white text-black">Monad, Ethereum, Solana, and BNB Chain</span>. Currently building on <span className="font-medium dark:text-white text-black">Somnia and Avalanche</span> in the pipeline. Each chain has its own quirks: EVM-compatible chains with Solidity, Solana with Rust and the Anchor framework, different consensus mechanisms, gas optimization strategies, and cross-chain bridge integrations.
+                    </ContentParagraph>
+                    <ContentParagraph>
+                      <span className="font-medium dark:text-white text-black">Orbix and client projects.</span> Built Orbix, an internal ops platform with <span className="font-medium dark:text-white text-black">workflow automation, task queuing, and team collaboration features</span>. Backend runs on Node.js with PostgreSQL for relational data, Redis for caching, and real-time updates via WebSockets. Also delivered 5+ production websites as a freelancer, optimizing for <span className="font-medium dark:text-white text-black">Core Web Vitals, SEO performance, and sub-second load times</span>.
                     </ContentParagraph>
                   </div>
                 </div>
