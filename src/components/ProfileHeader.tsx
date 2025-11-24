@@ -18,7 +18,7 @@ interface ProfileHeaderProps {
 
 export default function ProfileHeader({
   name = "Pulkit Saraf",
-  age = "21",
+  age = "20",
   title = "engineer • developer • builder",
   profileImage = "/pfp.jpg",
   socialLinks = {
@@ -31,7 +31,7 @@ export default function ProfileHeader({
 
   return (
     <div className="flex-col -mt-10">
-      <div 
+      <div
         className="w-28 h-28 mb-4 sm:ml-8 ml-4 relative z-10 rounded-full overflow-hidden bg-cover bg-center"
         role="img"
         aria-label={name}
@@ -39,7 +39,7 @@ export default function ProfileHeader({
       />
       <div className="text-left sm:flex sm:justify-between sm:items-center w-full sm:px-8 px-4 flex-col sm:flex-row">
         <div>
-          <h1 className="font-[family-name:var(--font-instrument-serif)] text-3xl sm:text-4xl tracking-[0.01em] font-medium mb-0">
+          <h1 className="font-[family-name:var(--font-instrument-serif)] text-2xl sm:text-5xl tracking-tighter font-black mb-2 uppercase hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-neutral-500 hover:to-neutral-900 dark:hover:from-primary dark:hover:to-white transition-all duration-300 cursor-default">
             {name}
           </h1>
           <p className="opacity-40 text-[14px]">
@@ -47,120 +47,96 @@ export default function ProfileHeader({
           </p>
         </div>
         <div className="flex justify-start space-x-4 mt-3 sm:mt-0 px-0">
-        {socialLinks.github && (
-            <Tooltip 
+          {socialLinks.github && (
+            <Tooltip
               preferredPosition="below"
               content={
-              <Image
-                width={3024}
-                height={1720}
-                src="https://placehold.co/600x400/png?text=GitHub"
-                alt="GitHub"
-                className="rounded-sm max-w-full h-auto"
-                unoptimized
-              />
-            }>
-              <a 
-                className="hover:opacity-80 touch-manipulation active:opacity-75" 
-                href={socialLinks.github} 
-                target="_blank" 
+                <Image
+                  width={3024}
+                  height={1720}
+                  src="https://placehold.co/600x400/png?text=GitHub"
+                  alt="GitHub"
+                  className="rounded-sm max-w-full h-auto"
+                  unoptimized
+                />
+              }>
+              <a
+                className="neo-button flex items-center justify-center w-10 h-10 bg-white dark:bg-black text-black dark:text-primary rounded-none hover:bg-neutral-200 dark:hover:bg-neutral-900"
+                href={socialLinks.github}
+                target="_blank"
                 rel="noopener noreferrer"
-                style={{ 
-                  WebkitTapHighlightColor: 'transparent',
-                  WebkitTouchCallout: 'none',
-                  WebkitUserSelect: 'none',
-                  userSelect: 'none'
-                }}
               >
-                <FaGithub size={18} />
+                <FaGithub size={20} />
               </a>
             </Tooltip>
           )}
           {socialLinks.twitter && (
-            <Tooltip 
+            <Tooltip
               preferredPosition="below"
               content={
-              <Image
-                width={1206}
-                height={1220}
-                src="https://placehold.co/600x400/png?text=Twitter"
-                alt="Twitter"
-                className="rounded-sm max-w-full h-auto"
-                unoptimized
-              />
-            }>
-              <a 
-                className="hover:opacity-80 touch-manipulation active:opacity-75" 
-                href={socialLinks.twitter} 
-                target="_blank" 
+                <Image
+                  width={1206}
+                  height={1220}
+                  src="https://placehold.co/600x400/png?text=Twitter"
+                  alt="Twitter"
+                  className="rounded-sm max-w-full h-auto"
+                  unoptimized
+                />
+              }>
+              <a
+                className="neo-button flex items-center justify-center w-10 h-10 bg-white dark:bg-black text-black dark:text-primary rounded-none hover:bg-neutral-200 dark:hover:bg-neutral-900"
+                href={socialLinks.twitter}
+                target="_blank"
                 rel="noopener noreferrer"
-                style={{ 
-                  WebkitTapHighlightColor: 'transparent',
-                  WebkitTouchCallout: 'none',
-                  WebkitUserSelect: 'none',
-                  userSelect: 'none'
-                }}
               >
-                <FaXTwitter size={18} />
+                <FaXTwitter size={20} />
               </a>
             </Tooltip>
           )}
           {socialLinks.resume && (
-            <Tooltip 
+            <Tooltip
               preferredPosition="below"
               content={
-              <Image
-                width={1076}
-                height={1394}
-                src="https://placehold.co/600x800/png?text=Resume"
-                alt="Resume"
-                className="rounded-sm max-w-full h-auto"
-                unoptimized
-              />
-            }>
-              <a 
-                className="hover:opacity-80 touch-manipulation active:opacity-75" 
-                href={socialLinks.resume} 
-                target="_blank" 
+                <Image
+                  width={1076}
+                  height={1394}
+                  src="https://placehold.co/600x800/png?text=Resume"
+                  alt="Resume"
+                  className="rounded-sm max-w-full h-auto"
+                  unoptimized
+                />
+              }>
+              <a
+                className="neo-button flex items-center justify-center w-10 h-10 bg-white dark:bg-black text-black dark:text-primary rounded-none hover:bg-neutral-200 dark:hover:bg-neutral-900"
+                href={socialLinks.resume}
+                target="_blank"
                 rel="noopener noreferrer"
-                style={{ 
-                  WebkitTapHighlightColor: 'transparent',
-                  WebkitTouchCallout: 'none',
-                  WebkitUserSelect: 'none',
-                  userSelect: 'none'
-                }}
               >
-                <FaPaperclip size={18} />
+                <FaPaperclip size={20} />
               </a>
             </Tooltip>
           )}
-         
+
           {socialLinks.linkedin && (
-            <Tooltip 
+            <Tooltip
               preferredPosition="below"
               content={
-              <Image
-                width={1596}
-                height={1108}
-                src="https://placehold.co/600x400/png?text=LinkedIn"
-                alt="LinkedIn"
-                className="rounded-sm max-w-full h-auto"
-                unoptimized
-              />
-            }>
-              <a 
-                className="hover:opacity-80 touch-manipulation active:opacity-75" 
-                href={socialLinks.linkedin} 
-                target="_blank" 
+                <Image
+                  width={1596}
+                  height={1108}
+                  src="https://placehold.co/600x400/png?text=LinkedIn"
+                  alt="LinkedIn"
+                  className="rounded-sm max-w-full h-auto"
+                  unoptimized
+                />
+              }>
+              <a
+                className="neo-button flex items-center justify-center w-10 h-10 bg-white dark:bg-black text-black dark:text-primary rounded-none hover:bg-neutral-200 dark:hover:bg-neutral-900"
+                href={socialLinks.linkedin}
+                target="_blank"
                 rel="noopener noreferrer"
-                style={{ 
-                  WebkitTapHighlightColor: 'transparent',
-                  WebkitTouchCallout: 'none',
-                  WebkitUserSelect: 'none',
-                  userSelect: 'none'
-                }}
               >
-                <FaLinkedin size={18} />
+                <FaLinkedin size={20} />
               </a>
             </Tooltip>
           )}

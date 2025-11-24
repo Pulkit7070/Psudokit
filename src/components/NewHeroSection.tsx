@@ -21,20 +21,20 @@ export default function NewHeroSection() {
         {/* Diagonal Patterns */}
         <DiagonalPattern side="left" />
         <DiagonalPattern side="right" />
-        
+
         {/* Main Content */}
         <div className="mx-auto sm:w-[calc(100%-120px)] w-full max-w-4xl">
           {/* Banner Section */}
           <Reveal delay={0.1} duration={0.8} amount={0.2}>
-            <BannerSection 
+            <BannerSection
               bannerImage="/psudokit_banner.jpg"
               quote="Build • Ship • Learn • Repeat"
             />
           </Reveal>
-          
+
           {/* Profile Header */}
           <Reveal delay={0.2} duration={0.7} amount={0.3}>
-            <ProfileHeader 
+            <ProfileHeader
               name="Pulkit Saraf"
               age="20"
               title="engineer • developer • builder"
@@ -47,7 +47,7 @@ export default function NewHeroSection() {
               }}
             />
           </Reveal>
-          
+
           {/* Content Prose */}
           <div className="prose dark:prose-invert max-w-none">
             <div className="text-base">
@@ -61,11 +61,11 @@ export default function NewHeroSection() {
                   <div></div>
                 </ContentSection>
               </Reveal>
-              
+
               <Reveal delay={0.05} duration={0.4} y={20} amount={0.8}>
                 <SectionBorder className="mt-6" />
               </Reveal>
-              
+
               {/* About Section */}
               <Reveal delay={0.1} duration={0.6} amount={0.3}>
                 <ContentSection className="pb-8 pt-6">
@@ -87,25 +87,25 @@ export default function NewHeroSection() {
                 <SectionBorder className="mt-6" />
               </Reveal>
 
-               {/* Experience Section */}
+              {/* Experience Section */}
               <Reveal delay={0.1} duration={0.6} amount={0.3}>
                 <div className="sm:px-12 px-6 py-4">
-                  <h2 className="text-lg sm:text-xl mb-4 opacity-20 mt-8">Professional Experience</h2>
+                  <h2 className="text-lg sm:text-xl mb-4 text-neutral-500 dark:text-neutral-400 font-bold uppercase tracking-widest mt-8">Professional Experience</h2>
                   <ExperienceContent />
                 </div>
               </Reveal>
 
-                <Reveal delay={0.05} duration={0.4} y={15} amount={0.8}>
-                  <SectionBorder className="mt-6" />
-                </Reveal>
-              
-                 {/* Technical Contributions */}
+              <Reveal delay={0.05} duration={0.4} y={15} amount={0.8}>
+                <SectionBorder className="mt-6" />
+              </Reveal>
+
+              {/* Technical Contributions */}
               <Reveal delay={0.1} duration={0.6} amount={0.2}>
                 <div className="sm:px-12 px-6 py-4">
-                  <h2 className="text-lg sm:text-xl mb-4 opacity-20 mt-8">Technical Contributions</h2>
+                  <h2 className="text-lg sm:text-xl mb-4 text-neutral-500 dark:text-neutral-400 font-bold uppercase tracking-widest mt-8">Technical Contributions</h2>
                   <div className="space-y-6 dark:text-white/70 text-black/70 pb-8">
                     <ContentParagraph>
-                      <span className="font-medium dark:text-white text-black">At Rabbit AI,</span> I worked as the lead engineer architecting <span className="font-medium dark:text-white text-black">agent-based inference systems</span>. Built end-to-end GenAI pipelines with multi-step reasoning, RAG (Retrieval-Augmented Generation) for context-aware responses, and agentic workflows that decompose complex tasks into sequential execution chains.  
+                      <span className="font-medium dark:text-white text-black">At Rabbit AI,</span> I worked as the lead engineer architecting <span className="font-medium dark:text-white text-black">agent-based inference systems</span>. Built end-to-end GenAI pipelines with multi-step reasoning, RAG (Retrieval-Augmented Generation) for context-aware responses, and agentic workflows that decompose complex tasks into sequential execution chains.
                     </ContentParagraph>
                     <ContentParagraph>
                       <span className="font-medium dark:text-white text-black">Offline P2P protocol.</span> Designed and implemented a <span className="font-medium dark:text-white text-black">peer-to-peer data transfer protocol</span> using QR-based packet streaming with <span className="font-medium dark:text-white text-black">Reed-Solomon error correction</span> and collision detection. Built custom packetization layer that fragments data into chunks, serializes with error-checking headers, transmits via sequential QR frames at 60fps, and reconstructs on the receiving end with <span className="font-medium dark:text-white text-black">CRC32 validation</span>. Zero network dependency. Pure offline communication.
@@ -124,16 +124,16 @@ export default function NewHeroSection() {
               </Reveal>
 
 
-              
+
               <Reveal delay={0.05} duration={0.4} y={15} amount={0.8}>
                 <SectionBorder className="mt-0 pt-0" />
               </Reveal>
-              
+
               {/* GitHub Contributions */}
               <Reveal delay={0.1} duration={0.6} amount={0.2}>
                 <div className="sm:px-12 px-6 mt-4">
-                  <h2 className="text-lg sm:text-xl opacity-20 leading-relaxed -tracking-[0.01em] mb-4">
-                    GitHub Contributions <span className="opacity-20">●</span> @Pulkit Saraf
+                  <h2 className="text-lg sm:text-xl text-neutral-500 dark:text-neutral-400 font-bold uppercase tracking-widest leading-relaxed mb-4">
+                    GitHub Contributions <span className="opacity-40">●</span> @Pulkit Saraf
                   </h2>
                   <div className="mb-6">
                     <ContributionsDisplay
@@ -144,22 +144,22 @@ export default function NewHeroSection() {
                   </div>
                 </div>
               </Reveal>
-              
+
               <Reveal delay={0.05} duration={0.4} y={15} amount={0.8}>
                 <SectionBorder className="mt-0 pt-0" />
               </Reveal>
-              
+
               {/* Tech Stack Section */}
               <Reveal delay={0.1} duration={0.6} amount={0.3}>
                 <div className="sm:px-12 px-6 mt-6 mb-6">
                   <TechStackMarquee className="w-full" />
                 </div>
               </Reveal>
-              
+
               <Reveal delay={0.05} duration={0.4} y={15} amount={0.8}>
                 <SectionBorder className="mt-0 pt-0" />
               </Reveal>
-              
+
               {/* Open Source Contributions Section */}
               {/* <Reveal delay={0.1} duration={0.6} amount={0.2}>
                 <div className="sm:px-12 px-6 mt-4">
@@ -177,20 +177,20 @@ export default function NewHeroSection() {
               {/* Reachout Section */}
               <Reveal delay={0.1} duration={0.6} amount={0.3}>
                 <div className="mt-6">
-                  <Reachout 
+                  <Reachout
                     title="Let's connect"
                     subtitle="Find me on these platforms"
                   />
                 </div>
               </Reveal>
-              
+
               <Reveal delay={0.05} duration={0.4} y={15} amount={0.8}>
                 <SectionBorder className="mt-0 pt-0" />
               </Reveal>
-              
+
               {/* call to action*/}
               <Reveal delay={0.1} duration={0.6} amount={0.4}>
-                <CallToAction/>
+                <CallToAction />
               </Reveal>
             </div>
           </div>
