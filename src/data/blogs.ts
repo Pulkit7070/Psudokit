@@ -56,7 +56,7 @@ Read the full article on Medium for detailed examples and advanced configuration
     author: 'Pulkit Saraf',
     tags: ['SSH', 'DevOps', 'Security', 'Server Management', 'Linux'],
     readTime: '3 min read',
-    externalUrl: 'https://medium.com/@code_kartik/how-to-ssh-into-your-server-the-right-way-a-beginner-friendly-guide-with-pro-tips-cbd0e8855c9a'
+    externalUrl: 'https://medium.com/@psudokit'
   }
 ]
 

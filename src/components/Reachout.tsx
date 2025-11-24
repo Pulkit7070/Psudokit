@@ -1,3 +1,4 @@
+
 'use client'
 import { FaLinkedin, FaXTwitter, FaGithub, FaPaperclip } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
@@ -20,11 +21,11 @@ export default function Reachout({
   title = "Let's connect",
   subtitle = "Find me on these platforms",
   socialLinks = {
-    twitter: "https://x.com/code_kartik",
-    github: "https://github.com/KartikLabhshetwar",
-    linkedin: "https://www.linkedin.com/in/kartikcode/",
-    resume: "https://drive.google.com/file/d/1iePpSqo5l0cztVSghCf2PfKH7mFTCTzs/view?usp=sharing",
-    mail: "mailto:kartik.labhshetwar@gmail.com",
+    twitter: "https://x.com/PsudoKit",
+    github: "https://github.com/Pulkit7070",
+    linkedin: "https://www.linkedin.com/in/pulkit-saraf-893213290/",
+    resume: "https://drive.google.com/file/d/1XRT3BcHjIwqIASw2vdA2V2HgtGlhfuxP/view?usp=sharing",
+    mail: "mailto:pulkitsaraf.dev@gmail.com",
   }
 }: ReachoutProps) {
 
@@ -42,7 +43,9 @@ export default function Reachout({
         
         <div className="flex justify-center sm:justify-start space-x-6 sm:space-x-0 sm:grid sm:grid-cols-2 lg:flex lg:justify-start sm:gap-4 lg:gap-6 lg:space-x-0">
           {socialLinks.github && (
-            <Tooltip content={
+            <Tooltip 
+              preferredPosition="above"
+              content={
                 <Image
                   width={3024}
                   height={1720}
@@ -73,7 +76,9 @@ export default function Reachout({
           )}
           
           {socialLinks.twitter && (
-            <Tooltip content={
+            <Tooltip 
+              preferredPosition="above"
+              content={
                 <Image
                   width={1206}
                   height={1220}
@@ -104,7 +109,9 @@ export default function Reachout({
           )}
           
           {socialLinks.linkedin && (
-            <Tooltip content={
+            <Tooltip 
+              preferredPosition="above"
+              content={
                 <Image
                   width={1596}
                   height={1108}
@@ -135,7 +142,7 @@ export default function Reachout({
           )}
 
           {socialLinks.mail && (
-            <Tooltip content="kartik.labhshetwar@gmail.com">
+            <Tooltip preferredPosition="above" content="pulkitsaraf.dev@gmail.com">
               <a 
                 className="flex items-center justify-center sm:justify-start space-x-0 sm:space-x-3 hover:opacity-80 transition-all duration-200 group p-3 sm:px-3 sm:py-3 lg:p-0 rounded-full sm:rounded-lg bg-gray-100/80 dark:bg-[hsl(0,3%,6.5%)] sm:bg-gray-50/50 sm:dark:bg-gray-800/30 lg:bg-transparent lg:dark:bg-transparent border border-gray-200/60 dark:border-gray-700/60 sm:border-gray-200/50 sm:dark:border-gray-700/50 lg:border-none hover:bg-gray-200/80 dark:hover:bg-gray-700/70 sm:hover:bg-gray-100/50 sm:dark:hover:bg-gray-700/40 lg:hover:bg-transparent lg:dark:hover:bg-transparent" 
                 href={socialLinks.mail} 
@@ -157,7 +164,9 @@ export default function Reachout({
           )}
           
           {socialLinks.resume && (
-            <Tooltip content={
+            <Tooltip 
+              preferredPosition="above"
+              content={
                 <Image
                   width={1076}
                   height={1394}
@@ -186,17 +195,6 @@ export default function Reachout({
               </a>
             </Tooltip>
           )}
-        </div>
-        
-        {/* Footer Section */}
-        <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-200 dark:border-gray-800">
-          <div className="flex flex-col space-y-2 sm:space-y-3 lg:flex-row lg:justify-between lg:items-center lg:space-y-0 text-center sm:text-left">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-1 sm:space-y-0 order-2 sm:order-1">
-              <div className="text-md dark:text-white/40 text-black/40">
-                © {new Date().getFullYear()} Pulkit Saraf.
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>

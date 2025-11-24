@@ -10,7 +10,7 @@ import ExperienceContent from './ExperienceContent'
 import Reachout from './Reachout'
 import CallToAction from './CallToAction'
 import ContributionsDisplay from './ContributionsDisplay'
-import OpenSourceContributionsCard from './OpenSourceContributionsCard'
+// import OpenSourceContributionsCard from './OpenSourceContributionsCard'
 import TechStackMarquee from './TechStackMarquee'
 import { Reveal } from './Reveal'
 
@@ -161,7 +161,7 @@ export default function NewHeroSection() {
               </Reveal>
               
               {/* Open Source Contributions Section */}
-              <Reveal delay={0.1} duration={0.6} amount={0.2}>
+              {/* <Reveal delay={0.1} duration={0.6} amount={0.2}>
                 <div className="sm:px-12 px-6 mt-4">
                   <h2 className="text-lg sm:text-xl opacity-20 mt-8 ml-5 leading-relaxed -tracking-[0.01em] mb-4">
                     Open Source Contributions <span className="opacity-20">●</span> {new Date().toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })}
@@ -172,17 +172,8 @@ export default function NewHeroSection() {
               
               <Reveal delay={0.05} duration={0.4} y={15} amount={0.8}>
                 <SectionBorder className="mt-4 pt-0" />
-              </Reveal>
+              </Reveal> */}
 
-              {/* call to action*/}
-              <Reveal delay={0.1} duration={0.6} amount={0.4}>
-                <CallToAction/>
-              </Reveal>
-              
-              <Reveal delay={0.05} duration={0.4} y={15} amount={0.8}>
-                <SectionBorder className="mt-0 pt-0" />
-              </Reveal>
-              
               {/* Reachout Section */}
               <Reveal delay={0.1} duration={0.6} amount={0.3}>
                 <div className="mt-6">
@@ -191,6 +182,15 @@ export default function NewHeroSection() {
                     subtitle="Find me on these platforms"
                   />
                 </div>
+              </Reveal>
+              
+              <Reveal delay={0.05} duration={0.4} y={15} amount={0.8}>
+                <SectionBorder className="mt-0 pt-0" />
+              </Reveal>
+              
+              {/* call to action*/}
+              <Reveal delay={0.1} duration={0.6} amount={0.4}>
+                <CallToAction/>
               </Reveal>
             </div>
           </div>

@@ -22,10 +22,10 @@ export default function ProfileHeader({
   title = "engineer • developer • builder",
   profileImage = "/pfp.jpg",
   socialLinks = {
-    twitter: "https://x.com/code_kartik",
-    github: "https://github.com/KartikLabhshetwar",
-    linkedin: "https://www.linkedin.com/in/kartikcode/",
-    resume: "https://drive.google.com/file/d/1iePpSqo5l0cztVSghCf2PfKH7mFTCTzs/view?usp=sharing",
+    twitter: "https://x.com/PsudoKit",
+    github: "https://github.com/Pulkit7070",
+    linkedin: "https://www.linkedin.com/in/pulkit-saraf-893213290/",
+    resume: "https://drive.google.com/file/d/1XRT3BcHjIwqIASw2vdA2V2HgtGlhfuxP/view?usp=sharing",
   }
 }: ProfileHeaderProps) {
 
@@ -48,7 +48,9 @@ export default function ProfileHeader({
         </div>
         <div className="flex justify-start space-x-4 mt-3 sm:mt-0 px-0">
         {socialLinks.github && (
-            <Tooltip content={
+            <Tooltip 
+              preferredPosition="below"
+              content={
               <Image
                 width={3024}
                 height={1720}
@@ -75,7 +77,9 @@ export default function ProfileHeader({
             </Tooltip>
           )}
           {socialLinks.twitter && (
-            <Tooltip content={
+            <Tooltip 
+              preferredPosition="below"
+              content={
               <Image
                 width={1206}
                 height={1220}
@@ -102,7 +106,9 @@ export default function ProfileHeader({
             </Tooltip>
           )}
           {socialLinks.resume && (
-            <Tooltip content={
+            <Tooltip 
+              preferredPosition="below"
+              content={
               <Image
                 width={1076}
                 height={1394}
@@ -130,7 +136,9 @@ export default function ProfileHeader({
           )}
          
           {socialLinks.linkedin && (
-            <Tooltip content={
+            <Tooltip 
+              preferredPosition="below"
+              content={
               <Image
                 width={1596}
                 height={1108}
