@@ -39,7 +39,8 @@ export default function ProfileHeader({
       />
       <div className="text-left sm:flex sm:justify-between sm:items-center w-full sm:px-8 px-4 flex-col sm:flex-row">
         <div>
-          <h1 className="font-[family-name:var(--font-instrument-serif)] text-2xl sm:text-5xl tracking-tighter font-black mb-2 uppercase hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-neutral-500 hover:to-neutral-900 dark:hover:from-primary dark:hover:to-white transition-all duration-300 cursor-default">
+          <h1 className="font-[family-name:var(--font-instrument-serif)] text-2
+          xl sm:text-5xl tracking-tighter font-black mb-2 uppercase hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-neutral-500 hover:to-neutral-900 dark:hover:from-primary dark:hover:to-white transition-all duration-300 cursor-default">
             {name}
           </h1>
           <p className="opacity-40 text-[14px]">
