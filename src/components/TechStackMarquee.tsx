@@ -7,33 +7,39 @@ import Image from "next/image";
 // Tech Stack Data
 const techStack = [
   // Languages
-  { name: "JavaScript", category: "language", icon: "/tech-icons/javascript.svg", color: "bg-gray-500" },
-  { name: "TypeScript", category: "language", icon: "/tech-icons/typescript.svg", color: "bg-gray-500" },
-  { name: "Java", category: "language", icon: "/tech-icons/java.svg", color: "bg-gray-500" },
-  { name: "Python", category: "language", icon: "/tech-icons/python.svg", color: "bg-gray-500" },
-  { name: "SQL", category: "language", icon: "/tech-icons/sql.svg", color: "bg-gray-500" },
-  
+  { name: "JavaScript", category: "language", icon: "/tech-icons/javascript.svg", color: "bg-yellow-400" },
+  { name: "TypeScript", category: "language", icon: "/tech-icons/typescript.svg", color: "bg-blue-600" },
+  { name: "Python", category: "language", icon: "/tech-icons/python.svg", color: "bg-blue-500" },
+  { name: "Java", category: "language", icon: "/tech-icons/java.svg", color: "bg-red-500" },
+  { name: "SQL", category: "language", icon: "/tech-icons/sql.svg", color: "bg-orange-500" },
+  { name: "Rust", category: "language", icon: "/tech-icons/rust.svg", color: "bg-orange-700" },
+
   // Frameworks & Libraries
-  { name: "React.js", category: "framework", icon: "/tech-icons/react.svg", color: "bg-gray-500" },
-  { name: "Next.js", category: "framework", icon: "/tech-icons/nextjs.svg", color: "bg-gray-500" },
+  { name: "React.js", category: "framework", icon: "/tech-icons/react.svg", color: "bg-cyan-400" },
+  { name: "Next.js", category: "framework", icon: "/tech-icons/nextjs,svg", color: "bg-black" },
+  { name: "Node.js", category: "framework", icon: "/tech-icons/nodejs.svg", color: "bg-green-600" },
   { name: "Express.js", category: "framework", icon: "/tech-icons/express.svg", color: "bg-gray-500" },
-  { name: "Node.js", category: "framework", icon: "/tech-icons/nodejs.svg", color: "bg-gray-500" },
-  { name: "FastAPI", category: "framework", icon: "/tech-icons/fastapi.svg", color: "bg-gray-500" },
-  { name: "Tailwind CSS", category: "framework", icon: "/tech-icons/tailwind.svg", color: "bg-gray-500" },
+  { name: "FastAPI", category: "framework", icon: "/tech-icons/fastapi.svg", color: "bg-teal-500" },
+  { name: "Tailwind CSS", category: "framework", icon: "/tech-icons/tailwind.svg", color: "bg-cyan-500" },
+
+  // AI & ML
+  { name: "PyTorch", category: "ai", icon: "/tech-icons/pytorch.svg", color: "bg-orange-600" },
+  { name: "TensorFlow", category: "ai", icon: "/tech-icons/tensorflow.svg", color: "bg-orange-500" },
+  { name: "Hugging Face", category: "ai", icon: "/tech-icons/huggingface.svg", color: "bg-yellow-500" },
+  { name: "LangChain", category: "ai", icon: "/tech-icons/langchain.svg", color: "bg-green-500" },
+  // Web3
+  { name: "Solidity", category: "web3", icon: "/tech-icons/solidity.svg", color: "bg-gray-800" },
+  { name: "Ethers.js", category: "web3", icon: "/tech-icons/ethers.svg", color: "bg-blue-800" },
+  { name: "IPFS", category: "web3", icon: "/tech-icons/ipfs.svg", color: "bg-teal-400" },
   
-  // Databases & Tools
-  { name: "MongoDB", category: "database", icon: "/tech-icons/mongodb.svg", color: "bg-gray-500" },
-  { name: "PostgreSQL", category: "database", icon: "/tech-icons/postgresql.svg", color: "bg-gray-500" },
-  { name: "Redis", category: "database", icon: "/tech-icons/redis.svg", color: "bg-gray-500" },
-  
-  // Developer Tools
-  { name: "Git", category: "tool", icon: "/tech-icons/Git.svg", color: "bg-gray-500" },
-  { name: "Docker", category: "tool", icon: "/tech-icons/docker.svg", color: "bg-gray-500" },
-  { name: "Azure", category: "tool", icon: "/tech-icons/Azure.svg", color: "bg-gray-500" },
-  { name: "AWS", category: "tool", icon: "/tech-icons/AWS.svg", color: "bg-gray-500" },
-  { name: "Google Cloud", category: "tool", icon: "/tech-icons/gcp.svg", color: "bg-gray-500" },
-  { name: "Jira", category: "tool", icon: "/tech-icons/Jira.svg", color: "bg-gray-500" },
-  { name: "Nix OS", category: "tool", icon: "/tech-icons/NixOS.svg", color: "bg-gray-500" },
+  // Databases
+  { name: "PostgreSQL", category: "database", icon: "/tech-icons/postgresql.svg", color: "bg-blue-400" },
+  { name: "MongoDB", category: "database", icon: "/tech-icons/mongodb.svg", color: "bg-green-500" },
+
+  // Tools
+  { name: "Docker", category: "tool", icon: "/tech-icons/docker.svg", color: "bg-blue-500" },
+  { name: "Git", category: "tool", icon: "/tech-icons/git.svg", color: "bg-orange-600" },
+  { name: "Jira", category: "tool", icon: "/tech-icons/jira.svg", color: "bg-blue-600" },
 ];
 
 interface TechIconProps {
@@ -70,7 +76,7 @@ function TechIcon({ tech, className = "" }: TechIconProps) {
           />
         </div>
       </div>
-      
+
       {/* Tech Name */}
       <span className="text-xs text-center font-medium text-gray-700 dark:text-gray-300 leading-tight group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
         {tech.name}

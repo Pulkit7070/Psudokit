@@ -90,7 +90,7 @@ export default function NewHeroSection() {
               {/* Experience Section */}
               <Reveal delay={0.1} duration={0.6} amount={0.3}>
                 <div className="sm:px-12 px-6 py-4">
-                  <h2 className="text-lg sm:text-xl mb-4 text-neutral-500 dark:text-neutral-400 font-bold uppercase tracking-widest mt-8">Professional Experience</h2>
+                  <h2 className="text-lg sm:text-xl mb-4 text-neutral-500 dark:text-neutral-400 mt-8">Professional Experience</h2>
                   <ExperienceContent />
                 </div>
               </Reveal>
@@ -102,7 +102,7 @@ export default function NewHeroSection() {
               {/* Technical Contributions */}
               <Reveal delay={0.1} duration={0.6} amount={0.2}>
                 <div className="sm:px-12 px-6 py-4">
-                  <h2 className="text-lg sm:text-xl mb-4 text-neutral-500 dark:text-neutral-400 font-bold uppercase tracking-widest mt-8">Technical Contributions</h2>
+                  <h2 className="text-lg sm:text-xl mb-4 text-neutral-500 dark:text-neutral-400 mt-8">Technical Contributions</h2>
                   <div className="space-y-6 dark:text-white/70 text-black/70 pb-8">
                     <ContentParagraph>
                       <span className="font-medium dark:text-white text-black">At Rabbit AI,</span> I worked as the lead engineer architecting <span className="font-medium dark:text-white text-black">agent-based inference systems</span>. Built end-to-end GenAI pipelines with multi-step reasoning, RAG (Retrieval-Augmented Generation) for context-aware responses, and agentic workflows that decompose complex tasks into sequential execution chains.
@@ -132,7 +132,7 @@ export default function NewHeroSection() {
               {/* GitHub Contributions */}
               <Reveal delay={0.1} duration={0.6} amount={0.2}>
                 <div className="sm:px-12 px-6 mt-4">
-                  <h2 className="text-lg sm:text-xl text-neutral-500 dark:text-neutral-400 font-bold uppercase tracking-widest leading-relaxed mb-4">
+                  <h2 className="text-lg sm:text-xl text-neutral-500 dark:text-neutral-400 leading-relaxed mb-4">
                     GitHub Contributions <span className="opacity-40">●</span> @Pulkit Saraf
                   </h2>
                   <div className="mb-6">
