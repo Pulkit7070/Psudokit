@@ -51,7 +51,7 @@ const GitHubContributions: React.FC<GitHubContributionsProps> = ({
             blockMargin={compact ? 2 : 4}
             showWeekdayLabels={!compact}
             theme={theme}
-            transformData={(data: Array<{ count: number; date: string; level: number }>) => {
+            transformData={(data) => {
               // This forces the component to re-render with fresh data
               return data;
             }}

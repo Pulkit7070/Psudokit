@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 interface Position {
   x: number;
@@ -168,7 +168,8 @@ export default function OnekoCat() {
         cancelAnimationFrame(animationFrameId.current);
       }
     };
-  }, []); // Empty dependency array ensures this only runs once!
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div

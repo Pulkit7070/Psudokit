@@ -6,44 +6,12 @@ import { FiArrowUpRight } from "react-icons/fi";
 import Link from "next/link";
 import Image from "next/image";
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
-import donezovideo from '/videos/donezo.mp4';
-import mindMentorVideo from '/videos/mind-mentor.mp4';
-import satyaCheckVideo from '/videos/satya-check.mp4';
-import fleethq from '/videos/fleethq.mp4';
-import rebatr from '/videos/rebatr-short.mp4';
-import lazycommitVideo from '/videos/lazycommit-video.mp4';
-import gocache from '/videos/gocache.mp4';
-import quotick from '/videos/quotick.mp4';
 
 
 interface ProjectCardProps {
   project: Project;
   isDetailed?: boolean;
 }
-
-// Map video IDs to imported video assets
-const getVideoSource = (videoId: string) => {
-  switch (videoId) {
-    case 'donezo':
-      return donezovideo;
-    case 'mind-mentor':
-      return mindMentorVideo;
-    case 'satya-check':
-      return satyaCheckVideo;
-    case 'fleethq':
-      return fleethq;
-    case 'rebatr-short':
-      return rebatr;
-    case 'lazycommit-video':
-      return lazycommitVideo;
-    case 'gocache':
-      return gocache;
-    case 'quotick':
-      return quotick
-    default:
-      return null;
-  }
-};
 
 export const ProjectCard = ({ project, isDetailed = false }: ProjectCardProps) => {
   const { triggerHaptic, isMobile } = useHapticFeedback();
@@ -103,22 +71,9 @@ export const ProjectCard = ({ project, isDetailed = false }: ProjectCardProps) =
         </div>
       </header>
 
-      {/* Media Section - Fixed Container */}
+      {/* Media Section - Cover Image Only */}
       <div className="mb-8 neo-card p-0 overflow-hidden border-2 border-black dark:border-white">
-        {project.video && getVideoSource(project.video) ? (
-          <div className="w-full aspect-video">
-            <video
-              src={(getVideoSource(project.video) as any).src || getVideoSource(project.video)}
-              poster={project.image}
-              className="w-full h-full object-cover"
-              controls
-              playsInline
-              autoPlay
-              muted
-              loop
-            />
-          </div>
-        ) : project.image && (
+        {project.image && (
           <div className="w-full aspect-video relative">
             <Image
               src={project.image}
