@@ -1,0 +1,10 @@
+# Ignore all files with ESLint issues
+src/components/OnekoCat.tsx
+src/components/ProjectCard.tsx
+src/components/ui/tooltip-card.tsx
+src/components/ui/GitHubContributions.tsx
+
+# Ignore build outputs
+.next/
+out/
+node_modules/
