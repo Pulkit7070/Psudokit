@@ -55,7 +55,7 @@ export default function ProfileHeader({
                 <Image
                   width={3024}
                   height={1720}
-                  src="https://placehold.co/600x400/png?text=GitHub"
+                  src="/images/github.jpg"
                   alt="GitHub"
                   className="rounded-sm max-w-full h-auto"
                   unoptimized
@@ -78,7 +78,7 @@ export default function ProfileHeader({
                 <Image
                   width={1206}
                   height={1220}
-                  src="https://placehold.co/600x400/png?text=Twitter"
+                  src="/images/x.jpg"
                   alt="Twitter"
                   className="rounded-sm max-w-full h-auto"
                   unoptimized
@@ -101,7 +101,7 @@ export default function ProfileHeader({
                 <Image
                   width={1076}
                   height={1394}
-                  src="https://placehold.co/600x800/png?text=Resume"
+                  src="/images/resume.jpg"
                   alt="Resume"
                   className="rounded-sm max-w-full h-auto"
                   unoptimized
@@ -125,7 +125,7 @@ export default function ProfileHeader({
                 <Image
                   width={1596}
                   height={1108}
-                  src="https://placehold.co/600x400/png?text=LinkedIn"
+                  src="/images/linkedin.jpg"
                   alt="LinkedIn"
                   className="rounded-sm max-w-full h-auto"
                   unoptimized

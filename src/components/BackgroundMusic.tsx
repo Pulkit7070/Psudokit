@@ -5,6 +5,7 @@ import { Howl } from 'howler'
 
 // Singleton pattern to ensure only one audio instance
 let isInitialized = false
+export let soundInstance: Howl | null = null
 
 export default function BackgroundMusic() {
   const [isPlaying, setIsPlaying] = useState(false)
@@ -26,7 +27,7 @@ export default function BackgroundMusic() {
 
     // Create a single Howl instance with Web Audio API (more reliable)
     const sound = new Howl({
-      src: ['/Leanin.mp3'],
+      src: ['/running-hill.mp3'],
       loop: true,
       volume: 0.05, // Very low volume for subtle background audio
       autoplay: false,
@@ -81,7 +82,8 @@ export default function BackgroundMusic() {
       }
     })
 
-    // Store reference to prevent garbage collection
+    // Store reference globally
+    soundInstance = sound
 
     // Function to start music with smooth fade-in
     const startMusic = () => {

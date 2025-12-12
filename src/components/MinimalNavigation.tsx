@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { ModeToggle } from '@/components/theme-toggle'
+import MusicToggle from '@/components/MusicToggle'
 import { motion } from 'framer-motion'
 
 export default function MinimalNavigation() {
@@ -61,13 +62,22 @@ export default function MinimalNavigation() {
                 blogs
               </Link>
             </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              transition={{ duration: 0.15, ease: "easeOut" }}
-            >
-              <ModeToggle />
-            </motion.div>
+            <div className="flex items-center gap-2">
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ duration: 0.15, ease: "easeOut" }}
+              >
+                <MusicToggle />
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ duration: 0.15, ease: "easeOut" }}
+              >
+                <ModeToggle />
+              </motion.div>
+            </div>
           </div>
         </div>
       </div>
