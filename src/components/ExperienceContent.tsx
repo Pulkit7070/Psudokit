@@ -15,13 +15,21 @@ interface ExperienceItem {
 export default function ExperienceContent() {
   const experiences: ExperienceItem[] = [
     {
-  company: "Rabbitt Learning",
-  position: "Technical Project Manager Intern",
-  duration: "June 2025 – October 2025",
-  description: "Built full-stack features including multi-select preferences, browser-based video recording, and WhatsApp/email API integrations, increasing feature adoption by 25%. Implemented real-time scraping with Cloudflare Workers and optimized workflows using Next.js and Supabase, improving platform performance by 20%.",
-  href: "https://learning.rabbitt.ai/",
-  logoUrl: "/tech-icons/rabbitt_learning.svg",
-},
+      company: "PreciQube (IIT Madras Startup)",
+      position: "Full Stack Developer Intern",
+      duration: "November 2025 · Remote",
+      description: "Built a web-based 2D optics simulation platform to trace and visualize light rays, supporting multiple optical scenarios for research testing. Worked with a team (3 devs + 5 physicists + 1 professor) through daily syncs to convert physics requirements into interactive workflows. Integrated a physics-based ray emission + tracing module into the UI, improving simulation responsiveness by ~20% in internal testing.",
+      href: "https://www.preciqube.com/",
+      logoUrl: "/preciqube.jpeg",
+    },
+    {
+      company: "Rabbitt Learning",
+      position: "Technical Project Manager Intern",
+      duration: "June 2025 – October 2025",
+      description: "Built full-stack features including multi-select preferences, browser-based video recording, and WhatsApp/email API integrations, increasing feature adoption by 25%. Implemented real-time scraping with Cloudflare Workers and optimized workflows using Next.js and Supabase, improving platform performance by 20%.",
+      href: "https://learning.rabbitt.ai/",
+      logoUrl: "/tech-icons/rabbitt_learning.svg",
+    },
     
     {
       company: "AY-Labels  ",
