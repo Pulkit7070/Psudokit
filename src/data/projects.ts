@@ -2,6 +2,23 @@ import { Project } from '@/types/project'
 
 export const projects: Project[] = [
   {
+    id: 'leadpilot',
+    title: "LeadPilot",
+    description: "Autonomous B2B Lead Generation Engine — multi-source prospecting via Google Maps and Instagram with AI-powered personalized outreach.",
+    longDescription: "Multi-source prospecting via Google Maps and Instagram — find businesses by location, category, or hashtags\n\nIntelligent lead scoring that filters out established businesses and prioritizes 'Digital Misfits' with weak online presence but high revenue potential\n\nAI-powered outreach generates hyper-personalized DMs using real business data like ratings, reviews, and website status\n\nReal-time dashboard with live progress tracking for scraping jobs and batch processing queue\n\nBuilt-in Lead CRM with status pipeline management (New → Contacted → Closed)\n\nSecure API authentication with rate limiting and CORS protection for production deployment",
+    image: '/images/Leadpilot.png',
+    tags: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "TailwindCSS",
+      "FastAPI",
+      "SQLAlchemy",
+      "Google Gemini",
+      "Apify"
+    ],
+  },
+  {
     id: 'opsuna',
     title: "Opsuna Tambo",
     description: "Natural language to automated workflows — describe what you want, watch it happen. One-prompt orchestration with 100+ tool integrations.",
