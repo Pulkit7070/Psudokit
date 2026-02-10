@@ -2,6 +2,25 @@ import { Project } from '@/types/project'
 
 export const projects: Project[] = [
   {
+    id: 'opsuna',
+    title: "Opsuna Tambo",
+    description: "Natural language to automated workflows — describe what you want, watch it happen. One-prompt orchestration with 100+ tool integrations.",
+    longDescription: "One-prompt orchestration — type a request like 'analyze the codebase and send the diagram to Slack' and the AI breaks it into steps, picks the right tools, and executes everything automatically\n\n100+ tool integrations via Composio — connect Slack, Gmail, Jira, GitHub, Notion, and more with OAuth, then use them through natural language without switching apps\n\nSemantic memory layer powered by pgvector — the system remembers past interactions, learns your patterns, and builds context over time for smarter suggestions\n\nCustom AI agents with scoped capabilities — create specialized agents like 'Data Analyst' or 'DevOps Engineer' with restricted tool access and isolated memory\n\nLive execution replay shows each step as it runs via WebSocket, with detailed audit logs and shareable reports for team visibility\n\nVisual outputs including Mermaid architecture diagrams and Recharts data visualizations, exportable and shareable with one click",
+    image: '/images/opsuna.png',
+    tags: [
+      "Next.js",
+      "Express",
+      "TypeScript",
+      "TailwindCSS",
+      "Supabase",
+      "Prisma",
+      "Gemini AI",
+      "Composio",
+      "WebSocket",
+      "pgvector"
+    ],
+  },
+  {
     id: 'haloai',
     title: "HaloAI",
     description: "An AI-powered desktop assistant with integrated Stellar blockchain wallet. Wake it with a hotkey, and it sees your screen, helps you debug, draft emails, send crypto, and more.",
