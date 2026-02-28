@@ -15,6 +15,14 @@ interface ExperienceItem {
 export default function ExperienceContent() {
   const experiences: ExperienceItem[] = [
     {
+      company: "ArmorIQ (Lumeneo)",
+      position: "Full Stack Engineer",
+      duration: "March 2026 · Remote",
+      description: "Building full-stack features for ArmorIQ's core platform, working directly with the VP of Engineering. Focused on shipping production-ready code across the stack while collaborating with a distributed team.",
+      href: "https://lumeneo.ai/",
+      logoUrl: "/armoriq.svg",
+    },
+    {
       company: "PreciQube (IIT Madras Startup)",
       position: "Full Stack Developer Intern",
       duration: "November 2025 · Remote",

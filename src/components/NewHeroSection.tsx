@@ -54,7 +54,7 @@ export default function NewHeroSection() {
               {/* Current Role Section */}
               <Reveal delay={0.1} duration={0.6} amount={0.4}>
                 <ContentSection
-                  subtitle="AI Engineer | Full-stack Developer"
+                  subtitle="Full Stack Engineer @ ArmorIQ | AI & Web3 Builder"
                   title=''
                   className="mt-6"
                 >
