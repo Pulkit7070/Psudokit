@@ -63,20 +63,8 @@ export default function MinimalNavigation() {
               </Link>
             </motion.div>
             <div className="flex items-center gap-2">
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                transition={{ duration: 0.15, ease: "easeOut" }}
-              >
-                <MusicToggle />
-              </motion.div>
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                transition={{ duration: 0.15, ease: "easeOut" }}
-              >
-                <ModeToggle />
-              </motion.div>
+              <MusicToggle />
+              <ModeToggle />
             </div>
           </div>
         </div>

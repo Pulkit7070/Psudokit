@@ -16,7 +16,7 @@ import { Reveal } from './Reveal'
 
 export default function NewHeroSection() {
   return (
-    <div className="min-h-screen transition-colors duration-300 font-['Inter'] relative">
+    <div className="min-h-screen transition-colors duration-300 font-['Inter'] relative bg-white dark:bg-black">
       <div className="relative mx-auto max-w-4xl">
         {/* Diagonal Patterns */}
         <DiagonalPattern side="left" />

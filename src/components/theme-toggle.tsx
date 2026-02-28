@@ -19,7 +19,7 @@ export function ModeToggle() {
       <Button
         variant="outline"
         size="icon"
-        className="w-10 h-10 rounded-full relative overflow-hidden"
+        className="w-10 h-10 rounded-full relative overflow-hidden bg-white dark:bg-black"
       >
         <span className="sr-only">Toggle theme</span>
       </Button>
@@ -31,7 +31,7 @@ export function ModeToggle() {
       variant="outline"
       size="icon"
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-      className="w-10 h-10 rounded-full relative overflow-hidden"
+      className="w-10 h-10 rounded-full relative overflow-hidden bg-white dark:bg-black"
     >
       <AnimatePresence mode="wait" initial={false}>
         {theme === "light" ? (
