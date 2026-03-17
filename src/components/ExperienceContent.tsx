@@ -38,7 +38,6 @@ export default function ExperienceContent() {
       href: "https://learning.rabbitt.ai/",
       logoUrl: "/tech-icons/rabbitt_learning.svg",
     },
-    
     {
       company: "AY-Labels  ",
       position: "Web Developer freelancer",
@@ -48,13 +47,13 @@ export default function ExperienceContent() {
       logoUrl: "/ay-labels.webp",
     },
     {
-  company: "Encryptix",
-  position: "Front-End Intern",
-  duration: "October 2024 – November 2024",
-  description: "Analyzed enterprise-level architectures to optimize development workflows, reducing build time by 15%. Built responsive UI components with React, JavaScript, and CSS3, improving user experience and accelerating feature delivery.",
-  href: "https://encryptix.in/",
-  logoUrl: "/encrytix.png",
-},
+      company: "Encryptix",
+      position: "Front-End Intern",
+      duration: "October 2024 – November 2024",
+      description: "Analyzed enterprise-level architectures to optimize development workflows, reducing build time by 15%. Built responsive UI components with React, JavaScript, and CSS3, improving user experience and accelerating feature delivery.",
+      href: "https://encryptix.in/",
+      logoUrl: "/encrytix.png",
+    },
   ];
 
   return (
@@ -64,16 +63,15 @@ export default function ExperienceContent() {
           {/* Left side - Logo, Company & Position */}
           <div className="flex items-center gap-3 sm:gap-4 flex-1 min-w-0">
             {/* Company Logo */}
-            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center overflow-hidden flex-shrink-0 relative">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center overflow-hidden flex-shrink-0 relative">
               {exp.logoUrl ? (
                 <>
-                  {/* Use Image with fill and object-contain so logos scale and center inside the circle. Add small padding so edges aren't clipped. */}
                   <Image
                     src={exp.logoUrl}
                     alt={exp.company}
                     fill
-                    sizes="(min-width: 640px) 48px, 40px"
-                    className="object-contain p-1"
+                    sizes="(min-width: 640px) 64px, 56px"
+                    className="object-contain p-2"
                   />
                 </>
               ) : (
