@@ -15,17 +15,17 @@ interface ExperienceItem {
 export default function ExperienceContent() {
   const experiences: ExperienceItem[] = [
     {
-      company: "ArmorIQ (Lumeneo)",
+      company: "ArmorIQ ",
       position: "Full Stack Engineer",
-      duration: "March 2026 · Remote",
+      duration: "February 2026 · Remote",
       description: "Building full-stack features for ArmorIQ's core platform, working directly with the VP of Engineering. Focused on shipping production-ready code across the stack while collaborating with a distributed team.",
-      href: "https://lumeneo.ai/",
-      logoUrl: "/armoriq.svg",
+      href: "https://armoriq.ai//",
+      logoUrl: "/armoriq-icon.svg",
     },
     {
       company: "PreciQube (IIT Madras Startup)",
       position: "Full Stack Developer Intern",
-      duration: "November 2025 · Remote",
+      duration: "November 2025 · December 2025",
       description: "Built a web-based 2D optics simulation platform to trace and visualize light rays, supporting multiple optical scenarios for research testing. Worked with a team (3 devs + 5 physicists + 1 professor) through daily syncs to convert physics requirements into interactive workflows. Integrated a physics-based ray emission + tracing module into the UI, improving simulation responsiveness by ~20% in internal testing.",
       href: "https://www.preciqube.com/",
       logoUrl: "/preciqube.jpeg",
