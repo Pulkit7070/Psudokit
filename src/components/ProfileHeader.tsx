@@ -25,7 +25,7 @@ export default function ProfileHeader({
     twitter: "https://x.com/PsudoKit",
     github: "https://github.com/Pulkit7070",
     linkedin: "https://www.linkedin.com/in/pulkit-saraf-893213290/",
-    resume: "https://drive.google.com/file/d/1KM3CnPPFAskLDkIwLhzmAByP17jZkhSL/view?usp=sharing",
+    resume: "https://drive.google.com/file/d/19x66j0eWd0GG4N6gOARUaU-V2nq_MbjH/view?usp=sharing",
   }
 }: ProfileHeaderProps) {
 
