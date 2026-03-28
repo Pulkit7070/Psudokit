@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import MinimalNavigation from '@/components/MinimalNavigation'
 import OnekoCat from '@/components/OnekoCat'
@@ -8,6 +7,7 @@ import { FaArrowLeft, FaDownload } from 'react-icons/fa6'
 import { motion } from 'framer-motion'
 
 const RESUME_DRIVE_LINK = 'https://drive.google.com/file/d/19x66j0eWd0GG4N6gOARUaU-V2nq_MbjH/view?usp=sharing'
+const RESUME_EMBED_LINK = 'https://drive.google.com/file/d/19x66j0eWd0GG4N6gOARUaU-V2nq_MbjH/preview'
 
 export default function CVPage() {
   return (
@@ -42,42 +42,21 @@ export default function CVPage() {
               </a>
             </motion.div>
 
-            {/* Resume Image */}
+            {/* Resume PDF Embed */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               className="w-full"
             >
-              <div className="neo-button overflow-hidden">
-                <Image
-                  src="/images/resume.jpg"
-                  alt="Pulkit Saraf - Resume"
-                  width={1076}
-                  height={1394}
-                  className="w-full h-auto"
-                  priority
-                  unoptimized
+              <div className="neo-button overflow-hidden w-full" style={{ aspectRatio: '8.5/11' }}>
+                <iframe
+                  src={RESUME_EMBED_LINK}
+                  className="w-full h-full border-0"
+                  allow="autoplay"
+                  title="Pulkit Saraf - Resume"
                 />
               </div>
-            </motion.div>
-
-            {/* Bottom CTA */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex justify-center mt-8 mb-12"
-            >
-              <a
-                href={RESUME_DRIVE_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="neo-button flex items-center gap-2 px-6 py-3 bg-white dark:bg-black text-black dark:text-primary text-sm hover:bg-neutral-200 dark:hover:bg-neutral-900 transition-colors duration-200"
-              >
-                <FaDownload size={14} />
-                Download Resume
-              </a>
             </motion.div>
           </div>
         </div>
