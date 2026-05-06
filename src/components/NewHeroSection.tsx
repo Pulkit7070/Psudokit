@@ -119,6 +119,9 @@ export default function NewHeroSection() {
                     <ContentParagraph>
                       <span className="font-medium dark:text-white text-black">Orbix and client projects.</span> Built Orbix, an internal ops platform with <span className="font-medium dark:text-white text-black">workflow automation, task queuing, and team collaboration features</span>. Backend runs on Node.js with PostgreSQL for relational data, Redis for caching, and real-time updates via WebSockets. Also delivered 5+ production websites as a freelancer, optimizing for <span className="font-medium dark:text-white text-black">Core Web Vitals, SEO performance, and sub-second load times</span>.
                     </ContentParagraph>
+                    <ContentParagraph>
+                      <span className="font-medium dark:text-white text-black">ferrokey, embedded KV store in Rust.</span> Built a <span className="font-medium dark:text-white text-black">storage engine from scratch</span> with a custom B-tree index, fixed 4096-byte page format, and a <span className="font-medium dark:text-white text-black">write-ahead log</span> with CRC32 checksums and fsync guarantees. Crash recovery replays WAL records on open and checkpoints cleanly. Zero runtime dependencies.
+                    </ContentParagraph>
                   </div>
                 </div>
               </Reveal>
@@ -161,18 +164,7 @@ export default function NewHeroSection() {
               </Reveal>
 
               {/* Open Source Contributions Section */}
-              {/* <Reveal delay={0.1} duration={0.6} amount={0.2}>
-                <div className="sm:px-12 px-6 mt-4">
-                  <h2 className="text-lg sm:text-xl opacity-20 mt-8 ml-5 leading-relaxed -tracking-[0.01em] mb-4">
-                    Open Source Contributions <span className="opacity-20">●</span> {new Date().toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })}
-                  </h2>
-                  <OpenSourceContributionsCard />
-                </div>
-              </Reveal>
-              
-              <Reveal delay={0.05} duration={0.4} y={15} amount={0.8}>
-                <SectionBorder className="mt-4 pt-0" />
-              </Reveal> */}
+              {/* moved to /opensource page */}
 
               {/* Reachout Section */}
               <Reveal delay={0.1} duration={0.6} amount={0.3}>

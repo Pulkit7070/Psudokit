@@ -53,13 +53,27 @@ export default function MinimalNavigation() {
               whileTap={{ scale: 0.99 }}
               transition={{ duration: 0.15, ease: "easeOut" }}
             >
-              <Link 
-                href="/blogs" 
+              <Link
+                href="/blogs"
                 className={`text-md sm:text-lg hover:opacity-80 hover:underline transition-opacity duration-200 ${
                   isActive('/blogs') ? 'opacity-100' : 'opacity-60'
                 }`}
               >
                 blogs
+              </Link>
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.01 }}
+              whileTap={{ scale: 0.99 }}
+              transition={{ duration: 0.15, ease: "easeOut" }}
+            >
+              <Link
+                href="/opensource"
+                className={`text-md sm:text-lg hover:opacity-80 hover:underline transition-opacity duration-200 ${
+                  isActive('/opensource') ? 'opacity-100' : 'opacity-60'
+                }`}
+              >
+                open source
               </Link>
             </motion.div>
             <div className="flex items-center gap-2">
