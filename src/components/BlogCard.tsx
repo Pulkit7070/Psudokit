@@ -6,6 +6,12 @@ interface BlogCardProps {
   blog: BlogPost
 }
 
+const getSourceLabel = (url: string): string => {
+  if (url.includes('x.com') || url.includes('twitter.com')) return 'X / Twitter'
+  if (url.includes('medium.com')) return 'Medium'
+  return 'External'
+}
+
 export const BlogCard: FC<BlogCardProps> = ({ blog }) => {
   const CardContent = () => (
     <article className="group cursor-pointer touch-manipulation neo-card p-6 bg-white dark:bg-black mb-6">
@@ -55,7 +61,7 @@ export const BlogCard: FC<BlogCardProps> = ({ blog }) => {
         {blog.externalUrl && (
           <div className="col-span-12 mt-4">
             <div className="flex items-center gap-2 text-xs font-bold text-black dark:text-white uppercase tracking-widest">
-              <span>Medium</span>
+              <span>{getSourceLabel(blog.externalUrl!)}</span>
               <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>

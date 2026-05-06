@@ -75,6 +75,21 @@ Read the full article on Medium for detailed technical specifications and advanc
     tags: ['x402', 'Protocol', 'Architecture', 'Security', 'AI', 'Blockchain', 'Developer Tools'],
     readTime: '8 min read',
     externalUrl: 'https://medium.com/@psudokit/x402-from-first-principles-a-complete-protocol-architecture-security-ai-economy-and-developer-cc1c6ff1034b'
+  },
+  {
+    id: 'ferrokey-rust-database',
+    title: 'I BUILT A DATABASE FROM SCRATCH IN RUST. HERE\'S EVERYTHING THAT WENT WRONG.',
+    description: 'Built ferrokey, an embedded KV store in Rust from scratch. B-tree, WAL, crash recovery, zero runtime dependencies. This is what actually broke my brain.',
+    content: `# I BUILT A DATABASE FROM SCRATCH IN RUST. HERE'S EVERYTHING THAT WENT WRONG.
+
+Built ferrokey, an embedded KV store in Rust from scratch. B-tree, WAL, crash recovery, zero runtime dependencies. This is what actually broke my brain.
+
+Read the full article for the complete breakdown.`,
+    date: '2026-05-07',
+    author: 'Pulkit Saraf',
+    tags: ['RUST', 'SYSTEMS', 'DATABASE', 'FERROKEY', 'WAL'],
+    readTime: '10 min read',
+    externalUrl: 'https://x.com/PsudoKit/status/2052067518525931664'
   }
 ]
 
