@@ -86,8 +86,50 @@ interface NoteState {
   y: number
 }
 
+function NoteContent({ exp, onClose }: { exp: ExperienceItem; onClose: () => void }) {
+  return (
+    <div className="bg-amber-50 dark:bg-neutral-900 border border-amber-200/80 dark:border-neutral-700 overflow-hidden rounded-sm sm:rounded-sm rounded-t-2xl sm:rounded-t-sm">
+      {/* header */}
+      <div className="bg-amber-100/80 dark:bg-neutral-800 px-5 pt-6 pb-3 border-b border-amber-200/60 dark:border-neutral-700 flex items-start justify-between gap-3">
+        <div>
+          <p className="text-[11px] font-bold uppercase tracking-widest text-amber-700/80 dark:text-neutral-400 mb-0.5">
+            {exp.company}
+          </p>
+          <p className="text-sm font-semibold text-neutral-800 dark:text-neutral-200">
+            {exp.position}
+          </p>
+          <p className="text-xs text-amber-600/70 dark:text-neutral-500 mt-0.5">{exp.duration}</p>
+        </div>
+        <button
+          onClick={onClose}
+          className="cursor-pointer text-amber-500/60 dark:text-neutral-500 hover:text-amber-900 dark:hover:text-white transition-colors mt-1 shrink-0"
+          aria-label="Close"
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      {/* body */}
+      <div className="px-5 py-4">
+        <ul className="space-y-2.5">
+          {exp.points.map((point, i) => (
+            <li key={i} className="flex items-start gap-2.5">
+              <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-amber-400 dark:bg-amber-500 shrink-0" />
+              <p className="text-[13.5px] leading-relaxed text-neutral-700 dark:text-neutral-300">
+                {point}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  )
+}
+
 function StickyNote({ note, onClose }: { note: NoteState; onClose: () => void }) {
   const ref = useRef<HTMLDivElement>(null)
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 640
 
   useEffect(() => {
     function handleClick(e: MouseEvent) {
@@ -104,10 +146,26 @@ function StickyNote({ note, onClose }: { note: NoteState; onClose: () => void })
     }
   }, [onClose])
 
-  const noteW = typeof window !== 'undefined' ? Math.min(480, window.innerWidth - 32) : 480
-  const clampedX = typeof window !== 'undefined'
-    ? Math.min(Math.max(note.x - noteW / 2, 16), window.innerWidth - noteW - 16)
-    : note.x
+  // Mobile: bottom sheet
+  if (isMobile) {
+    return (
+      <>
+        {/* backdrop */}
+        <div className="fixed inset-0 z-40 bg-black/40" onClick={onClose} />
+        <div ref={ref} className="fixed bottom-0 left-0 right-0 z-50 drop-shadow-2xl">
+          {/* drag handle */}
+          <div className="flex justify-center pt-3 pb-1 bg-amber-50 dark:bg-neutral-900 rounded-t-2xl border-t border-x border-amber-200/80 dark:border-neutral-700">
+            <div className="w-10 h-1 rounded-full bg-amber-300/60 dark:bg-neutral-600" />
+          </div>
+          <NoteContent exp={note.exp} onClose={onClose} />
+        </div>
+      </>
+    )
+  }
+
+  // Desktop: popover near icon
+  const noteW = Math.min(480, window.innerWidth - 32)
+  const clampedX = Math.min(Math.max(note.x - noteW / 2, 16), window.innerWidth - noteW - 16)
   const clampedY = note.y + 10
 
   return (
@@ -116,46 +174,8 @@ function StickyNote({ note, onClose }: { note: NoteState; onClose: () => void })
       style={{ left: clampedX, top: clampedY, width: noteW }}
       className="fixed z-50 rotate-[-0.4deg] drop-shadow-2xl"
     >
-      {/* pin */}
       <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-red-400 border-2 border-red-200/60 shadow-lg z-10" />
-
-      <div className="bg-amber-50 dark:bg-neutral-900 border border-amber-200/80 dark:border-neutral-700 rounded-sm overflow-hidden">
-        {/* header */}
-        <div className="bg-amber-100/80 dark:bg-neutral-800 px-5 pt-6 pb-3 border-b border-amber-200/60 dark:border-neutral-700 flex items-start justify-between gap-3">
-          <div>
-            <p className="text-[11px] font-bold uppercase tracking-widest text-amber-700/80 dark:text-neutral-400 mb-0.5">
-              {note.exp.company}
-            </p>
-            <p className="text-sm font-semibold text-neutral-800 dark:text-neutral-200">
-              {note.exp.position}
-            </p>
-            <p className="text-xs text-amber-600/70 dark:text-neutral-500 mt-0.5">{note.exp.duration}</p>
-          </div>
-          <button
-            onClick={onClose}
-            className="cursor-pointer text-amber-500/60 dark:text-neutral-500 hover:text-amber-900 dark:hover:text-white transition-colors mt-1 shrink-0"
-            aria-label="Close"
-          >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-
-        {/* body */}
-        <div className="px-5 py-4">
-          <ul className="space-y-2.5">
-            {note.exp.points.map((point, i) => (
-              <li key={i} className="flex items-start gap-2.5">
-                <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-amber-400 dark:bg-amber-500 shrink-0" />
-                <p className="text-[13.5px] leading-relaxed text-neutral-700 dark:text-neutral-300">
-                  {point}
-                </p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
+      <NoteContent exp={note.exp} onClose={onClose} />
     </div>
   )
 }
