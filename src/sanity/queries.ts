@@ -1,6 +1,6 @@
 import { groq } from 'next-sanity'
 import { getSanityClient, isSanityConfigured } from './client'
-import type { SanityBlog, SanityOssContribution } from './types'
+import type { SanityBlog, SanityOssRepo } from './types'
 
 // ─── Field fragments ──────────────────────────────────────────────────────────
 
@@ -25,24 +25,6 @@ const blogDetailFields = groq`
   seo
 `
 
-const ossFields = groq`
-  _id,
-  title,
-  repo,
-  repoUrl,
-  prUrl,
-  prNumber,
-  description,
-  impact,
-  mergedAt,
-  status,
-  language,
-  repoStars,
-  category,
-  tags,
-  featured
-`
-
 // ─── Exported GROQ queries (for Vision / typegen) ─────────────────────────────
 
 export const allBlogsQuery = groq`
@@ -63,22 +45,25 @@ export const blogBySlugQuery = groq`
   }
 `
 
-export const allOssContributionsQuery = groq`
-  *[_type == "ossContribution"] | order(mergedAt desc) {
-    ${ossFields}
-  }
-`
-
-export const featuredOssQuery = groq`
-  *[_type == "ossContribution" && featured == true] | order(mergedAt desc)[0...6] {
-    ${ossFields}
-  }
-`
-
-// Groups by repo — useful for a repo-grouped portfolio display
-export const ossByRepoQuery = groq`
-  *[_type == "ossContribution"] | order(repo asc, mergedAt desc) {
-    ${ossFields}
+export const allOssReposQuery = groq`
+  *[_type == "ossRepo"] | order(featured desc, repo asc) {
+    _id,
+    repo,
+    repoUrl,
+    language,
+    repoStars,
+    tags,
+    featured,
+    prs[] {
+      _key,
+      title,
+      prUrl,
+      prNumber,
+      status,
+      category,
+      description,
+      mergedAt
+    }
   }
 `
 
@@ -121,10 +106,6 @@ export async function getBlogBySlug(slug: string): Promise<SanityBlog | null> {
   return safeFetchOne<SanityBlog>(blogBySlugQuery, { slug })
 }
 
-export async function getAllOssContributions(): Promise<SanityOssContribution[]> {
-  return safeFetchMany<SanityOssContribution>(allOssContributionsQuery)
-}
-
-export async function getFeaturedOss(): Promise<SanityOssContribution[]> {
-  return safeFetchMany<SanityOssContribution>(featuredOssQuery)
+export async function getAllOssRepos(): Promise<SanityOssRepo[]> {
+  return safeFetchMany<SanityOssRepo>(allOssReposQuery)
 }

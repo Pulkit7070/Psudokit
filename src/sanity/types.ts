@@ -75,25 +75,25 @@ export interface SanityBlog {
   }
 }
 
-export interface SanityOssContribution {
-  _id: string
-  _type: 'ossContribution'
+export interface SanityPr {
+  _key: string
   title: string
-  repo: string
-  repoUrl: string
   prUrl: string
   prNumber?: number
-  description?: string
-  impact?: string
-  mergedAt?: string
   status: 'merged' | 'open' | 'closed'
+  category?: 'feature' | 'bugfix' | 'security' | 'docs' | 'refactor' | 'performance'
+  description?: string
+  mergedAt?: string
+}
+
+export interface SanityOssRepo {
+  _id: string
+  _type: 'ossRepo'
+  repo: string
+  repoUrl: string
   language?: string
   repoStars?: number
-  category: 'feature' | 'bugfix' | 'security' | 'docs' | 'refactor' | 'performance'
   tags?: string[]
   featured?: boolean
-  relatedBlog?: {
-    _ref: string
-    _type: 'reference'
-  }
+  prs: SanityPr[]
 }

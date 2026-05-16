@@ -1,4 +1,4 @@
 import { blog } from './blog'
-import { ossContribution } from './ossContribution'
+import { ossRepo } from './ossRepo'
 
-export const schemaTypes = [blog, ossContribution]
+export const schemaTypes = [blog, ossRepo]
