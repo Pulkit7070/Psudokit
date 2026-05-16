@@ -6,6 +6,6 @@ export interface BlogPost {
   date: string
   author: string
   tags: string[]
-  readTime: string
+  readTime?: string
   externalUrl?: string
 }

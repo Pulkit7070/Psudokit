@@ -14,6 +14,7 @@ const statusLabel: Record<OpenSourceItem['status'], string> = {
   active: 'ACTIVE',
   merged: 'MERGED',
   open: 'OPEN PR',
+  closed: 'CLOSED',
 }
 
 export default function OpenSourceListClient({ items }: OpenSourceListClientProps) {
