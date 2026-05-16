@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push)",
+      "Bash(git push:*)",
+      "Bash(npx next:*)",
+      "Bash(GIT_AUTHOR_DATE=\"2026-03-17T12:00:00\" GIT_COMMITTER_DATE=\"2026-03-17T12:00:00\" git -c core.autocrlf=true add src/components/ExperienceContent.tsx && GIT_AUTHOR_DATE=\"2026-03-17T12:00:00\" GIT_COMMITTER_DATE=\"2026-03-17T12:00:00\" git commit -m \"$\\(cat <<'EOF'\nImprove experience section logo sizes and formatting\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(npm install *)",
+      "Bash(gh api *)",
+      "Bash(mkdir -p \"C:\\\\Users\\\\Asus\\\\desktop\\\\projects\\\\portfolio-main\\\\sanity\\\\schemas\")",
+      "Bash(mkdir -p \"C:\\\\Users\\\\Asus\\\\desktop\\\\projects\\\\portfolio-main\\\\src\\\\sanity\")",
+      "Bash(mkdir -p \"C:\\\\Users\\\\Asus\\\\desktop\\\\projects\\\\portfolio-main\\\\src\\\\app\\\\studio\\\\[[...tool]]\")",
+      "Bash(mkdir -p \"C:\\\\Users\\\\Asus\\\\desktop\\\\projects\\\\portfolio-main\\\\src\\\\app\\\\api\\\\revalidate\")",
+      "Bash(npx tsc *)",
+      "Bash(npx kill-port *)"
+    ]
+  }
+}

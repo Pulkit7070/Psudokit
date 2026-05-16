@@ -74,7 +74,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function BlogPostPage({ params }: Props) {
   const { id } = await params
 
-  // Sanity takes priority — check by slug first
+  // Sanity takes priority - check by slug first
   const sanityPost = await getBlogBySlug(id)
   if (sanityPost) {
     return <SanityBlogPostClient post={sanityPost} />

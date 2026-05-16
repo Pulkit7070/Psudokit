@@ -17,7 +17,7 @@ export const openSourceItems: OpenSourceItem[] = [
   {
     id: 'multigravity-pro',
     title: 'multigravity-pro',
-    description: 'Run multiple Antigravity IDE profiles at the same time — each with its own accounts, settings, and extensions. Supports Windows, macOS, and Linux.',
+    description: 'Run multiple Antigravity IDE profiles at the same time - each with its own accounts, settings, and extensions. Supports Windows, macOS, and Linux.',
     repo: 'Pulkit7070/multigravity-pro',
     repoUrl: 'https://github.com/Pulkit7070/multigravity-pro',
     type: 'own',
@@ -92,7 +92,7 @@ export const openSourceItems: OpenSourceItem[] = [
   {
     id: 'jaeger-8583',
     title: 'fix(apiv3): return InvalidArgument gRPC status for malformed trace ID and missing time range',
-    description: 'Improved error handling in Jaeger\'s v3 API — malformed trace IDs and missing time ranges now return proper InvalidArgument gRPC status codes instead of generic errors.',
+    description: 'Improved error handling in Jaeger\'s v3 API - malformed trace IDs and missing time ranges now return proper InvalidArgument gRPC status codes instead of generic errors.',
     repo: 'jaegertracing/jaeger',
     repoUrl: 'https://github.com/jaegertracing/jaeger',
     type: 'contribution',
@@ -156,7 +156,7 @@ export const openSourceItems: OpenSourceItem[] = [
   {
     id: 'openfga-3132',
     title: 'fix(postgres): block readiness until connection pool reaches minIdleConns',
-    description: 'Fixed a readiness race in OpenFGA\'s Postgres backend — the server now waits for the connection pool to warm up to minIdleConns before accepting traffic.',
+    description: 'Fixed a readiness race in OpenFGA\'s Postgres backend - the server now waits for the connection pool to warm up to minIdleConns before accepting traffic.',
     repo: 'openfga/openfga',
     repoUrl: 'https://github.com/openfga/openfga',
     type: 'contribution',
@@ -218,7 +218,7 @@ export const openSourceItems: OpenSourceItem[] = [
   {
     id: 'meshery-19486',
     title: 'fix: show registry bulk-action checkbox on hover and selection',
-    description: 'Fixed the registry bulk-action checkbox in Meshery\'s UI — it now correctly appears on row hover and persists when rows are selected.',
+    description: 'Fixed the registry bulk-action checkbox in Meshery\'s UI - it now correctly appears on row hover and persists when rows are selected.',
     repo: 'meshery/meshery',
     repoUrl: 'https://github.com/meshery/meshery',
     type: 'contribution',
@@ -242,7 +242,7 @@ export const openSourceItems: OpenSourceItem[] = [
   {
     id: 'meshery-19488',
     title: 'fix(ui): use owner name for Avatar alt and tooltip in design/filter cards',
-    description: 'Fixed Avatar accessibility in Meshery\'s design and filter cards — alt text and tooltips now correctly display the owner\'s name instead of a fallback or empty string.',
+    description: 'Fixed Avatar accessibility in Meshery\'s design and filter cards - alt text and tooltips now correctly display the owner\'s name instead of a fallback or empty string.',
     repo: 'meshery/meshery',
     repoUrl: 'https://github.com/meshery/meshery',
     type: 'contribution',
@@ -254,7 +254,7 @@ export const openSourceItems: OpenSourceItem[] = [
   {
     id: 'meshery-19489',
     title: 'fix(notification): initialize current_view filter to unread to prevent stale events flashing',
-    description: 'Fixed a UI flash in Meshery\'s notification panel — the current_view filter is now initialized to "unread" on mount, preventing stale read events from briefly appearing.',
+    description: 'Fixed a UI flash in Meshery\'s notification panel - the current_view filter is now initialized to "unread" on mount, preventing stale read events from briefly appearing.',
     repo: 'meshery/meshery',
     repoUrl: 'https://github.com/meshery/meshery',
     type: 'contribution',
@@ -268,7 +268,7 @@ export const openSourceItems: OpenSourceItem[] = [
   {
     id: 'codelabz-errorboundary',
     title: 'feat: add ErrorBoundary to prevent full-app crashes from component errors',
-    description: 'Contributed to Codelabz — a Google Summer of Code organization under c2siorg. Wrapped the app in an ErrorBoundary so isolated component failures no longer take down the entire UI.',
+    description: 'Contributed to Codelabz - a Google Summer of Code organization under c2siorg. Wrapped the app in an ErrorBoundary so isolated component failures no longer take down the entire UI.',
     repo: 'c2siorg/Codelabz',
     repoUrl: 'https://github.com/c2siorg/Codelabz',
     type: 'contribution',
@@ -280,7 +280,7 @@ export const openSourceItems: OpenSourceItem[] = [
   {
     id: 'codelabz-security',
     title: 'fix: restrict Firestore and Storage security rules to require authentication',
-    description: 'Patched open read/write access in Codelabz (GSoC org) — Firestore and Storage security rules now enforce authenticated access only, closing an unauthenticated data exposure vector.',
+    description: 'Patched open read/write access in Codelabz (GSoC org) - Firestore and Storage security rules now enforce authenticated access only, closing an unauthenticated data exposure vector.',
     repo: 'c2siorg/Codelabz',
     repoUrl: 'https://github.com/c2siorg/Codelabz',
     type: 'contribution',
@@ -292,7 +292,7 @@ export const openSourceItems: OpenSourceItem[] = [
   {
     id: 'zulip-docs',
     title: 'docs: clarify docker group activation and daemon requirement',
-    description: 'Documentation fix for Zulip — a major open source messaging platform and Google Summer of Code organization. Clarified setup steps that were causing confusion for new contributors.',
+    description: 'Documentation fix for Zulip - a major open source messaging platform and Google Summer of Code organization. Clarified setup steps that were causing confusion for new contributors.',
     repo: 'zulip/zulip',
     repoUrl: 'https://github.com/zulip/zulip',
     type: 'contribution',

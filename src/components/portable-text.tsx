@@ -7,7 +7,7 @@ import imageUrlBuilder from '@sanity/image-url'
 import { CodeBlock } from './CodeBlock'
 import type { SanityBodyBlock, SanityCallout, SanityCodeBlock, SanityImageAsset } from '@/sanity/types'
 
-// Image builder using only NEXT_PUBLIC vars — safe for client bundle, no read token needed
+// Image builder using only NEXT_PUBLIC vars - safe for client bundle, no read token needed
 const builder = imageUrlBuilder({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ?? '',
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET ?? 'production',

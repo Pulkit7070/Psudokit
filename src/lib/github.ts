@@ -177,7 +177,7 @@ export async function fetchUserPullRequests(username: string, limit: number = 50
 // Fallback data in case API fails
 export const fallbackContributions: ProcessedContribution[] = [
   {
-    title: "multigravity-pro — run multiple Antigravity IDE profiles simultaneously",
+    title: "multigravity-pro - run multiple Antigravity IDE profiles simultaneously",
     description: "Developer tool with 27+ stars. Each profile gets its own accounts, settings, and extensions. Supports Windows, macOS, and Linux.",
     repository: "Pulkit7070/multigravity-pro",
     link: "https://github.com/Pulkit7070/multigravity-pro",
@@ -186,7 +186,7 @@ export const fallbackContributions: ProcessedContribution[] = [
     state: "merged"
   },
   {
-    title: "ferrokey — embedded key-value store in Rust",
+    title: "ferrokey - embedded key-value store in Rust",
     description: "B-tree index, write-ahead log with CRC32 checksums, crash recovery, fixed 4096-byte page format. Zero runtime dependencies.",
     repository: "Pulkit7070/ferrokey",
     link: "https://github.com/Pulkit7070/ferrokey",
@@ -196,7 +196,7 @@ export const fallbackContributions: ProcessedContribution[] = [
   },
   {
     title: "feat: add ErrorBoundary to prevent full-app crashes from component errors",
-    description: "Contributed to Codelabz — a Google Summer of Code organization under c2siorg.",
+    description: "Contributed to Codelabz - a Google Summer of Code organization under c2siorg.",
     repository: "c2siorg/Codelabz",
     link: "https://github.com/c2siorg/Codelabz/pull/356",
     date: "2026",
@@ -205,7 +205,7 @@ export const fallbackContributions: ProcessedContribution[] = [
   },
   {
     title: "fix: restrict Firestore and Storage security rules to require authentication",
-    description: "Patched open read/write access in Codelabz (GSoC org) — security rules now enforce authenticated access only.",
+    description: "Patched open read/write access in Codelabz (GSoC org) - security rules now enforce authenticated access only.",
     repository: "c2siorg/Codelabz",
     link: "https://github.com/c2siorg/Codelabz/pull/353",
     date: "2026",
@@ -214,7 +214,7 @@ export const fallbackContributions: ProcessedContribution[] = [
   },
   {
     title: "docs: clarify docker group activation and daemon requirement",
-    description: "Documentation fix for Zulip — a major open source messaging platform and GSoC organization.",
+    description: "Documentation fix for Zulip - a major open source messaging platform and GSoC organization.",
     repository: "zulip/zulip",
     link: "https://github.com/zulip/zulip/pull/37344",
     date: "2026",

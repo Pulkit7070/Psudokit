@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
   } else if (type === 'ossContribution') {
     revalidatePath('/opensource')
   } else {
-    // Unknown type — revalidate everything
+    // Unknown type - revalidate everything
     revalidatePath('/', 'layout')
   }
 
