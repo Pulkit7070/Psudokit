@@ -27,7 +27,7 @@ export default function BackgroundMusic() {
 
     // Create a single Howl instance with Web Audio API (more reliable)
     const sound = new Howl({
-      src: ['/running-hill.mp3'],
+      src: ['/sunflower-instrumental.mp3'],
       loop: true,
       volume: 0.05, // Very low volume for subtle background audio
       autoplay: false,
