@@ -149,13 +149,13 @@ export default function VisitorGlobe() {
         />
       </div>
 
-      {/* Small counter caption: to the right of the globe on desktop,
+      {/* Small counter caption: bottom-right of the globe on desktop,
           centered below it on mobile. */}
-      <div className="mt-3 sm:mt-0 flex flex-col items-center sm:items-end text-center sm:text-right sm:absolute sm:right-0 sm:top-1/2 sm:-translate-y-1/2">
+      <div className="mt-3 sm:mt-0 flex flex-col items-center sm:items-end text-center sm:text-right sm:absolute sm:right-2 sm:bottom-6">
         <span className="font-[family-name:var(--font-instrument-serif)] text-2xl sm:text-3xl tabular-nums dark:text-white text-black leading-none">
           {total === null ? '—' : total.toLocaleString()}
         </span>
-        <span className="text-[10px] sm:text-xs uppercase tracking-wide dark:text-white/40 text-black/40 mt-1 max-w-[120px]">
+        <span className="text-[10px] sm:text-xs uppercase tracking-wide dark:text-white/40 text-black/40 mt-1 max-w-[150px]">
           visitors from around the world
         </span>
       </div>
