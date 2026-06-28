@@ -6,8 +6,8 @@ import OnekoCat from '@/components/OnekoCat'
 import { FaArrowLeft, FaDownload } from 'react-icons/fa6'
 import { motion } from 'framer-motion'
 
-const RESUME_DRIVE_LINK = 'https://drive.google.com/file/d/19x66j0eWd0GG4N6gOARUaU-V2nq_MbjH/view?usp=sharing'
-const RESUME_EMBED_LINK = 'https://drive.google.com/file/d/19x66j0eWd0GG4N6gOARUaU-V2nq_MbjH/preview'
+const RESUME_LINK = '/Pulkit_Saraf_Resume.pdf'
+const RESUME_EMBED_LINK = `${RESUME_LINK}#zoom=83&navpanes=0&toolbar=0`
 
 export default function CVPage() {
   return (
@@ -32,7 +32,8 @@ export default function CVPage() {
                 back
               </Link>
               <a
-                href={RESUME_DRIVE_LINK}
+                href={RESUME_LINK}
+                download
                 target="_blank"
                 rel="noopener noreferrer"
                 className="neo-button flex items-center gap-2 px-4 py-2 bg-white dark:bg-black text-black dark:text-primary text-sm hover:bg-neutral-200 dark:hover:bg-neutral-900 transition-colors duration-200"
