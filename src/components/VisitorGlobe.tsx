@@ -11,16 +11,28 @@ interface VisitorPoint {
   count: number
 }
 
-// Map a location's visit count to a marker size and a green intensity, so
-// denser regions render bigger and brighter (GitHub-graph style heat).
-function markerFor(point: VisitorPoint, maxCount: number) {
-  const intensity = Math.log(point.count + 1) / Math.log(maxCount + 1) // 0..1
-  const size = 0.04 + intensity * 0.08
+// GitHub contribution-graph green ramp: light green (sparse) to dark, rich
+// green (dense). Markers stay small and flush so they read as filled-in map
+// dots rather than chunky blobs sitting on top of the globe.
+const GH_LIGHT: [number, number, number] = [0.61, 0.91, 0.66] // #9be9a8
+const GH_DARK: [number, number, number] = [0.13, 0.43, 0.22] // #216e39
+
+// Visit count at which a location reaches the darkest green. Absolute (not
+// relative to the busiest city) so a single visit reads light, like GitHub.
+const DENSITY_FULL = 40
+
+function markerFor(point: VisitorPoint) {
+  const intensity = Math.min(
+    1,
+    Math.log(point.count + 1) / Math.log(DENSITY_FULL + 1),
+  ) // 0..1
   const color: [number, number, number] = [
-    0.1 + intensity * 0.3,
-    0.5 + intensity * 0.5,
-    0.2 + intensity * 0.2,
+    GH_LIGHT[0] + (GH_DARK[0] - GH_LIGHT[0]) * intensity,
+    GH_LIGHT[1] + (GH_DARK[1] - GH_LIGHT[1]) * intensity,
+    GH_LIGHT[2] + (GH_DARK[2] - GH_LIGHT[2]) * intensity,
   ]
+  // Keep close to the map's own dot size so it looks embedded, not chunky.
+  const size = 0.022 + intensity * 0.01
   return { location: [point.lat, point.lng] as [number, number], size, color }
 }
 
@@ -68,8 +80,6 @@ export default function VisitorGlobe() {
     }
     window.addEventListener('resize', onResize)
 
-    const maxCount = Math.max(1, ...points.map((p) => p.count))
-
     const globe = createGlobe(canvas, {
       devicePixelRatio: 2,
       width: width * 2,
@@ -82,9 +92,10 @@ export default function VisitorGlobe() {
       mapSamples: 16000,
       mapBrightness: 6,
       baseColor: [0.3, 0.3, 0.35],
-      markerColor: [0.1, 0.8, 0.3],
+      markerColor: GH_LIGHT,
       glowColor: [0.6, 0.6, 0.7],
-      markers: points.map((p) => markerFor(p, maxCount)),
+      markerElevation: 0,
+      markers: points.map((p) => markerFor(p)),
     })
 
     // cobe v2 has no internal loop: drive it ourselves so it keeps redrawing
