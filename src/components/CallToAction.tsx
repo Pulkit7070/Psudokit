@@ -2,7 +2,6 @@
 
 import Image from 'next/image'
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
-import VisitorGlobe from './VisitorGlobe'
 
 interface CallToActionProps {
   profileImage?: string
@@ -87,8 +86,6 @@ export default function CallToAction({
           />
         </a>
       </div>
-
-      <VisitorGlobe />
 
       <div className="mt-10 sm:mt-16 pt-8 sm:pt-10 border-t border-gray-200 dark:border-gray-800 w-full">
         <div className="flex flex-col space-y-3 sm:space-y-4 text-center sm:text-left">

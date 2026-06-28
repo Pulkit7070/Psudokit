@@ -10,6 +10,7 @@ import ExperienceContent from './ExperienceContent'
 import Reachout from './Reachout'
 import CallToAction from './CallToAction'
 import ContributionsDisplay from './ContributionsDisplay'
+import VisitorGlobe from './VisitorGlobe'
 // import OpenSourceContributionsCard from './OpenSourceContributionsCard'
 import TechStackMarquee from './TechStackMarquee'
 import { Reveal } from './Reveal'
@@ -145,6 +146,17 @@ export default function NewHeroSection() {
                       className="w-full"
                     />
                   </div>
+                </div>
+              </Reveal>
+
+              <Reveal delay={0.05} duration={0.4} y={15} amount={0.8}>
+                <SectionBorder className="mt-0 pt-0" />
+              </Reveal>
+
+              {/* Visitor Globe */}
+              <Reveal delay={0.1} duration={0.6} amount={0.2}>
+                <div className="sm:px-12 px-6 mt-4">
+                  <VisitorGlobe />
                 </div>
               </Reveal>
 

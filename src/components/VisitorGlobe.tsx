@@ -121,16 +121,9 @@ export default function VisitorGlobe() {
   }, [points])
 
   return (
-    <div className="mt-10 sm:mt-14 flex flex-col items-center gap-4">
-      <div className="text-center">
-        <div className="font-[family-name:var(--font-instrument-serif)] text-5xl sm:text-7xl tabular-nums dark:text-white text-black">
-          {total === null ? '—' : total.toLocaleString()}
-        </div>
-        <div className="text-sm sm:text-base dark:text-white/40 text-black/40 mt-1">
-          visitors from around the world
-        </div>
-      </div>
-      <div className="w-full max-w-[520px] aspect-square">
+    <div className="relative mt-4">
+      {/* Globe stays centered; its position is independent of the counter. */}
+      <div className="w-full max-w-[460px] aspect-square mx-auto">
         <canvas
           ref={canvasRef}
           className="w-full h-full cursor-grab active:cursor-grabbing"
@@ -154,6 +147,17 @@ export default function VisitorGlobe() {
             }
           }}
         />
+      </div>
+
+      {/* Small counter caption: to the right of the globe on desktop,
+          centered below it on mobile. */}
+      <div className="mt-3 sm:mt-0 flex flex-col items-center sm:items-end text-center sm:text-right sm:absolute sm:right-0 sm:top-1/2 sm:-translate-y-1/2">
+        <span className="font-[family-name:var(--font-instrument-serif)] text-2xl sm:text-3xl tabular-nums dark:text-white text-black leading-none">
+          {total === null ? '—' : total.toLocaleString()}
+        </span>
+        <span className="text-[10px] sm:text-xs uppercase tracking-wide dark:text-white/40 text-black/40 mt-1 max-w-[120px]">
+          visitors from around the world
+        </span>
       </div>
     </div>
   )
