@@ -8,6 +8,20 @@ interface VisitorPoint {
   lng: number
   city: string
   country: string
+  count: number
+}
+
+// Map a location's visit count to a marker size and a green intensity, so
+// denser regions render bigger and brighter (GitHub-graph style heat).
+function markerFor(point: VisitorPoint, maxCount: number) {
+  const intensity = Math.log(point.count + 1) / Math.log(maxCount + 1) // 0..1
+  const size = 0.04 + intensity * 0.08
+  const color: [number, number, number] = [
+    0.1 + intensity * 0.3,
+    0.5 + intensity * 0.5,
+    0.2 + intensity * 0.2,
+  ]
+  return { location: [point.lat, point.lng] as [number, number], size, color }
 }
 
 export default function VisitorGlobe() {
@@ -54,6 +68,8 @@ export default function VisitorGlobe() {
     }
     window.addEventListener('resize', onResize)
 
+    const maxCount = Math.max(1, ...points.map((p) => p.count))
+
     const globe = createGlobe(canvas, {
       devicePixelRatio: 2,
       width: width * 2,
@@ -66,9 +82,9 @@ export default function VisitorGlobe() {
       mapSamples: 16000,
       mapBrightness: 6,
       baseColor: [0.3, 0.3, 0.35],
-      markerColor: [1, 0.55, 0.1],
+      markerColor: [0.1, 0.8, 0.3],
       glowColor: [0.6, 0.6, 0.7],
-      markers: points.map((p) => ({ location: [p.lat, p.lng], size: 0.06 })),
+      markers: points.map((p) => markerFor(p, maxCount)),
     })
 
     // cobe v2 has no internal loop: drive it ourselves so it keeps redrawing
