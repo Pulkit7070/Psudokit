@@ -195,7 +195,7 @@ export default function NewHeroSection() {
               {/* Quote */}
               <Reveal delay={0.1} duration={0.6} amount={0.4}>
                 <div className="sm:px-12 px-6 py-10 sm:py-14 text-center">
-                  <p className="font-[family-name:var(--font-instrument-serif)] text-2xl sm:text-3xl italic text-neutral-700 dark:text-neutral-300 leading-relaxed max-w-2xl mx-auto">
+                  <p className="font-[family-name:var(--font-instrument-serif)] text-lg sm:text-xl italic text-neutral-700 dark:text-neutral-300 leading-relaxed max-w-2xl mx-auto">
                     &ldquo;Any fool can write code that a computer can
                     understand. Good programmers write code that humans can
                     understand.&rdquo;
