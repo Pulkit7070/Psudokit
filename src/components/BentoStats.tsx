@@ -83,11 +83,11 @@ export default function BentoStats() {
             />
           ))}
         </div>
-        <div className="grid grid-cols-2 gap-x-4 gap-y-2 mt-3">
-          <Stat color="#ef4444" label="Stars" value={n(gh?.stars)} />
-          <Stat color="#a855f7" label="Followers" value={n(gh?.followers)} />
-          <Stat color="#3b82f6" label="PRs" value={n(gh?.prs)} />
-          <Stat color="#e5e7eb" label="Issues" value={n(gh?.issues)} />
+        <div className="grid grid-cols-4 gap-2 mt-3">
+          <StatBlock value={n(gh?.stars)} label="stars" />
+          <StatBlock value={n(gh?.followers)} label="followers" />
+          <StatBlock value={n(gh?.prs)} label="PRs" />
+          <StatBlock value={n(gh?.issues)} label="issues" />
         </div>
       </div>
 
@@ -150,12 +150,15 @@ function ImageBg({ src }: { src: string }) {
   )
 }
 
-function Stat({ color, label, value }: { color: string; label: string; value: string }) {
+function StatBlock({ value, label }: { value: string; label: string }) {
   return (
-    <div className="flex items-center gap-2">
-      <span className="inline-block w-2.5 h-2.5 rounded-full" style={{ backgroundColor: color }} />
-      <span className="text-sm text-white/50">{label}:</span>
-      <span className="text-sm font-semibold text-white">{value}</span>
+    <div className="flex flex-col">
+      <span className="text-lg sm:text-2xl font-semibold text-white tabular-nums leading-none">
+        {value}
+      </span>
+      <span className="text-[10px] uppercase tracking-wider text-white/40 mt-1">
+        {label}
+      </span>
     </div>
   )
 }
