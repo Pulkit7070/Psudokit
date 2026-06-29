@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 import { FaGithub, FaLinkedin, FaXTwitter, FaArrowUpRightFromSquare } from 'react-icons/fa6'
 
 interface GitHubStats {
@@ -85,6 +86,10 @@ export default function BentoStats() {
         </div>
       </div>
 
+      {/* Image tiles */}
+      <ImageTile src="/bento/cat.png" alt="" />
+      <ImageTile src="/bento/project-exe.png" alt="" caption="project.exe" />
+
       {/* WakaTime tile */}
       <div className={`${tile} col-span-2 bg-gradient-to-br from-[#1e1b4b] to-[#0f172a] flex flex-col justify-between`}>
         <div className="flex items-center gap-2 text-indigo-300/70 text-xs font-mono">
@@ -101,6 +106,9 @@ export default function BentoStats() {
         </div>
       </div>
 
+      {/* Image tile */}
+      <ImageTile src="/bento/take-care.png" alt="" />
+
       {/* LinkedIn tile */}
       <Social
         href={LINKEDIN_URL}
@@ -110,12 +118,42 @@ export default function BentoStats() {
       />
 
       {/* X tile */}
-      <Social
+      <a
         href={X_URL}
-        gradient="from-[#1a1a1a] to-[#000000]"
-        icon={<FaXTwitter className="w-6 h-6 text-white" />}
-        label="the unfiltered one"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`${tile} col-span-2 bg-gradient-to-br from-[#1a1a1a] to-[#000000] flex flex-col items-center justify-center gap-2 group`}
+      >
+        <FaXTwitter className="w-6 h-6 text-white group-hover:scale-110 transition-transform" />
+        <span className="text-xs text-white/50">the unfiltered one</span>
+      </a>
+    </div>
+  )
+}
+
+function ImageTile({
+  src,
+  alt,
+  caption,
+}: {
+  src: string
+  alt: string
+  caption?: string
+}) {
+  return (
+    <div className="relative col-span-1 overflow-hidden rounded-2xl border border-white/10 group transition-transform duration-300 hover:-translate-y-0.5">
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes="(max-width: 1024px) 50vw, 25vw"
+        className="object-cover transition-transform duration-500 group-hover:scale-105"
       />
+      {caption && (
+        <span className="absolute bottom-2 left-2 text-[10px] font-mono text-white/80 bg-black/40 px-1.5 py-0.5 rounded backdrop-blur-sm">
+          {caption}
+        </span>
+      )}
     </div>
   )
 }
