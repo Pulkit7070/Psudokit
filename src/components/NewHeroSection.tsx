@@ -11,7 +11,7 @@ import Reachout from './Reachout'
 import CallToAction from './CallToAction'
 import ContributionsDisplay from './ContributionsDisplay'
 import VisitorGlobe from './VisitorGlobe'
-import WakaTimeStats from './WakaTimeStats'
+import BentoStats from './BentoStats'
 // import OpenSourceContributionsCard from './OpenSourceContributionsCard'
 import TechStackMarquee from './TechStackMarquee'
 import { Reveal } from './Reveal'
@@ -154,14 +154,14 @@ export default function NewHeroSection() {
                 <SectionBorder className="mt-0 pt-0" />
               </Reveal>
 
-              {/* WakaTime Coding Activity */}
+              {/* Bento stats dashboard */}
               <Reveal delay={0.1} duration={0.6} amount={0.2}>
                 <div className="sm:px-12 px-6 mt-4">
                   <h2 className="text-lg sm:text-xl text-neutral-500 dark:text-neutral-400 leading-relaxed mb-4">
-                    Coding Activity <span className="opacity-40">●</span> WakaTime
+                    Dashboard <span className="opacity-40">●</span> at a glance
                   </h2>
                   <div className="mb-6">
-                    <WakaTimeStats />
+                    <BentoStats />
                   </div>
                 </div>
               </Reveal>

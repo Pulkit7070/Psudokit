@@ -20,22 +20,32 @@ export async function GET() {
   }
 
   const auth = Buffer.from(key).toString('base64')
-  const res = await fetch(
-    'https://wakatime.com/api/v1/users/current/stats/last_7_days',
-    {
-      headers: { Authorization: `Basic ${auth}` },
-      next: { revalidate: 1800 },
-    },
-  )
+  const headers = { Authorization: `Basic ${auth}` }
 
-  if (!res.ok) {
+  const [statsRes, todayRes] = await Promise.all([
+    fetch('https://wakatime.com/api/v1/users/current/stats/last_7_days', {
+      headers,
+      next: { revalidate: 1800 },
+    }),
+    fetch(
+      'https://wakatime.com/api/v1/users/current/all_time_since_today',
+      { headers, next: { revalidate: 1800 } },
+    ),
+  ])
+
+  if (!statsRes.ok) {
     return NextResponse.json(
-      { error: `WakaTime API returned ${res.status}` },
+      { error: `WakaTime API returned ${statsRes.status}` },
       { status: 502 },
     )
   }
 
-  const { data } = await res.json()
+  const { data } = await statsRes.json()
+  let allTimeText = '0 secs'
+  if (todayRes.ok) {
+    const todayJson = await todayRes.json()
+    allTimeText = todayJson.data?.text ?? '0 secs'
+  }
 
   const languages: WakaLanguage[] = (data.languages ?? [])
     .slice(0, 5)
@@ -50,6 +60,7 @@ export async function GET() {
     totalText: data.human_readable_total ?? '0 secs',
     totalSeconds: data.total_seconds ?? 0,
     dailyAverageText: data.human_readable_daily_average ?? '0 secs',
+    allTimeText,
     languages,
   })
 }
