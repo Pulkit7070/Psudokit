@@ -67,13 +67,6 @@ export default function BentoStats() {
 
       {/* Contribution + stats tile */}
       <div className={`${tile} col-span-2 row-span-2 bg-gradient-to-br from-[#0a0f0c] to-[#0f1a13] flex flex-col justify-between`}>
-        <Image
-          src="/bento/gojo.png"
-          alt=""
-          width={64}
-          height={64}
-          className="absolute top-2 right-2 w-12 h-12 sm:w-14 sm:h-14 object-contain z-10 pointer-events-none drop-shadow"
-        />
         <div className="grid grid-cols-[repeat(14,minmax(0,1fr))] gap-1">
           {GRID.map((v, i) => (
             <span
