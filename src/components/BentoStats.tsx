@@ -52,18 +52,16 @@ export default function BentoStats() {
         href={GITHUB_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className={`${tile} col-span-2 row-span-2 group bg-gradient-to-br from-[#0d1117] via-[#10231a] to-[#0d3320] flex flex-col justify-between`}
+        className={`${tile} col-span-2 row-span-2 group flex flex-col justify-between bg-[#0d1117]`}
       >
-        <div className="absolute -right-6 -top-6 opacity-10 group-hover:opacity-20 transition-opacity">
-          <FaGithub className="w-40 h-40 text-white" />
-        </div>
+        <ImageBg src="/bento/project-exe.png" />
         <div className="relative z-10 flex items-center justify-between">
           <FaGithub className="w-7 h-7 text-white" />
-          <FaArrowUpRightFromSquare className="w-3.5 h-3.5 text-white/40 group-hover:text-white/80 transition-colors" />
+          <FaArrowUpRightFromSquare className="w-3.5 h-3.5 text-white/50 group-hover:text-white transition-colors" />
         </div>
         <div className="relative z-10">
           <div className="text-2xl sm:text-3xl font-semibold text-white">GitHub</div>
-          <div className="text-sm text-emerald-300/70 mt-1">open source &amp; late-night side quests</div>
+          <div className="text-sm text-white/60 mt-1">open source &amp; late-night side quests</div>
         </div>
       </a>
 
@@ -115,7 +113,7 @@ export default function BentoStats() {
         href={X_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className={`${tile} col-span-1 group flex flex-col items-center justify-center gap-2`}
+        className={`${tile} col-span-1 group flex flex-col items-start justify-end gap-1`}
       >
         <ImageBg src="/bento/cat.png" />
         <FaXTwitter className="relative z-10 w-6 h-6 text-white group-hover:scale-110 transition-transform drop-shadow-lg" />
@@ -127,7 +125,7 @@ export default function BentoStats() {
         href={LINKEDIN_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className={`${tile} col-span-1 group flex flex-col items-center justify-center gap-2 bg-black`}
+        className={`${tile} col-span-1 group flex flex-col items-start justify-end gap-1 bg-black`}
       >
         <ImageBg src="/bento/sad.png" />
         <FaLinkedin className="relative z-10 w-6 h-6 text-[#4aa3f0] group-hover:scale-110 transition-transform drop-shadow-lg" />
