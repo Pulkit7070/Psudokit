@@ -47,26 +47,35 @@ export default function BentoStats() {
 
   return (
     <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 auto-rows-[150px]">
-      {/* GitHub feature tile (project-exe image background) */}
+      {/* GitHub feature tile */}
       <a
         href={GITHUB_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className={`${tile} col-span-2 row-span-2 group flex flex-col justify-between`}
+        className={`${tile} col-span-2 row-span-2 group bg-gradient-to-br from-[#0d1117] via-[#10231a] to-[#0d3320] flex flex-col justify-between`}
       >
-        <ImageBg src="/bento/project-exe.png" />
+        <div className="absolute -right-6 -top-6 opacity-10 group-hover:opacity-20 transition-opacity">
+          <FaGithub className="w-40 h-40 text-white" />
+        </div>
         <div className="relative z-10 flex items-center justify-between">
           <FaGithub className="w-7 h-7 text-white" />
-          <FaArrowUpRightFromSquare className="w-3.5 h-3.5 text-white/50 group-hover:text-white transition-colors" />
+          <FaArrowUpRightFromSquare className="w-3.5 h-3.5 text-white/40 group-hover:text-white/80 transition-colors" />
         </div>
         <div className="relative z-10">
           <div className="text-2xl sm:text-3xl font-semibold text-white">GitHub</div>
-          <div className="text-sm text-white/60 mt-1">open source &amp; late-night side quests</div>
+          <div className="text-sm text-emerald-300/70 mt-1">open source &amp; late-night side quests</div>
         </div>
       </a>
 
       {/* Contribution + stats tile */}
       <div className={`${tile} col-span-2 row-span-2 bg-gradient-to-br from-[#0a0f0c] to-[#0f1a13] flex flex-col justify-between`}>
+        <Image
+          src="/bento/gojo.png"
+          alt=""
+          width={64}
+          height={64}
+          className="absolute top-2 right-2 w-12 h-12 sm:w-14 sm:h-14 object-contain z-10 pointer-events-none drop-shadow"
+        />
         <div className="grid grid-cols-[repeat(14,minmax(0,1fr))] gap-1">
           {GRID.map((v, i) => (
             <span
@@ -113,13 +122,17 @@ export default function BentoStats() {
         <span className="relative z-10 text-xs text-white/80 drop-shadow">the unfiltered one</span>
       </a>
 
-      {/* LinkedIn tile */}
-      <Social
+      {/* LinkedIn tile (sad-face image background) */}
+      <a
         href={LINKEDIN_URL}
-        gradient="from-[#0a66c2]/40 to-[#0a1a2f]"
-        icon={<FaLinkedin className="w-6 h-6 text-[#4aa3f0]" />}
-        label="the formal one"
-      />
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`${tile} col-span-1 group flex flex-col items-center justify-center gap-2 bg-black`}
+      >
+        <ImageBg src="/bento/sad.png" />
+        <FaLinkedin className="relative z-10 w-6 h-6 text-[#4aa3f0] group-hover:scale-110 transition-transform drop-shadow-lg" />
+        <span className="relative z-10 text-xs text-white/80 drop-shadow">the formal one</span>
+      </a>
     </div>
   )
 }
@@ -146,29 +159,5 @@ function Stat({ color, label, value }: { color: string; label: string; value: st
       <span className="text-sm text-white/50">{label}:</span>
       <span className="text-sm font-semibold text-white">{value}</span>
     </div>
-  )
-}
-
-function Social({
-  href,
-  gradient,
-  icon,
-  label,
-}: {
-  href: string
-  gradient: string
-  icon: React.ReactNode
-  label: string
-}) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`${tile} col-span-1 bg-gradient-to-br ${gradient} flex flex-col items-center justify-center gap-2 group`}
-    >
-      <div className="group-hover:scale-110 transition-transform">{icon}</div>
-      <span className="text-xs text-white/50">{label}</span>
-    </a>
   )
 }
