@@ -154,6 +154,22 @@ export default function NewHeroSection() {
                 <SectionBorder className="mt-0 pt-0" />
               </Reveal>
 
+              {/* Tech Stack Section */}
+              <Reveal delay={0.1} duration={0.6} amount={0.3}>
+                <div className="sm:px-12 px-6 mt-4">
+                  <h2 className="text-lg sm:text-xl text-neutral-500 dark:text-neutral-400 leading-relaxed mb-4">
+                    Technologies I work with to build products that solve real problems
+                  </h2>
+                  <div className="mb-6">
+                    <TechStackMarquee className="w-full" />
+                  </div>
+                </div>
+              </Reveal>
+
+              <Reveal delay={0.05} duration={0.4} y={15} amount={0.8}>
+                <SectionBorder className="mt-0 pt-0" />
+              </Reveal>
+
               {/* Bento stats dashboard */}
               <Reveal delay={0.1} duration={0.6} amount={0.2}>
                 <div className="sm:px-12 px-6 mt-4">
@@ -174,17 +190,6 @@ export default function NewHeroSection() {
               <Reveal delay={0.1} duration={0.6} amount={0.2}>
                 <div className="sm:px-12 px-6 mt-4">
                   <VisitorGlobe />
-                </div>
-              </Reveal>
-
-              <Reveal delay={0.05} duration={0.4} y={15} amount={0.8}>
-                <SectionBorder className="mt-0 pt-0" />
-              </Reveal>
-
-              {/* Tech Stack Section */}
-              <Reveal delay={0.1} duration={0.6} amount={0.3}>
-                <div className="sm:px-12 px-6 mt-6 mb-6">
-                  <TechStackMarquee className="w-full" />
                 </div>
               </Reveal>
 
