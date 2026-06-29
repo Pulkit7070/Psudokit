@@ -11,6 +11,7 @@ import Reachout from './Reachout'
 import CallToAction from './CallToAction'
 import ContributionsDisplay from './ContributionsDisplay'
 import VisitorGlobe from './VisitorGlobe'
+import WakaTimeStats from './WakaTimeStats'
 // import OpenSourceContributionsCard from './OpenSourceContributionsCard'
 import TechStackMarquee from './TechStackMarquee'
 import { Reveal } from './Reveal'
@@ -145,6 +146,22 @@ export default function NewHeroSection() {
                       variant="compact"
                       className="w-full"
                     />
+                  </div>
+                </div>
+              </Reveal>
+
+              <Reveal delay={0.05} duration={0.4} y={15} amount={0.8}>
+                <SectionBorder className="mt-0 pt-0" />
+              </Reveal>
+
+              {/* WakaTime Coding Activity */}
+              <Reveal delay={0.1} duration={0.6} amount={0.2}>
+                <div className="sm:px-12 px-6 mt-4">
+                  <h2 className="text-lg sm:text-xl text-neutral-500 dark:text-neutral-400 leading-relaxed mb-4">
+                    Coding Activity <span className="opacity-40">●</span> WakaTime
+                  </h2>
+                  <div className="mb-6">
+                    <WakaTimeStats />
                   </div>
                 </div>
               </Reveal>
