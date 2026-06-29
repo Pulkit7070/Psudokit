@@ -196,10 +196,10 @@ export default function NewHeroSection() {
               <Reveal delay={0.1} duration={0.6} amount={0.4}>
                 <div className="sm:px-12 px-6 py-10 sm:py-14 text-center">
                   <p className="font-[family-name:var(--font-instrument-serif)] text-2xl sm:text-3xl italic text-neutral-700 dark:text-neutral-300 leading-relaxed max-w-2xl mx-auto">
-                    &ldquo;Simplicity is the ultimate sophistication.&rdquo;
+                    &ldquo;Talk is cheap. Show me the code.&rdquo;
                   </p>
                   <p className="text-sm text-neutral-400 dark:text-neutral-500 mt-4">
-                    Leonardo da Vinci
+                    Linus Torvalds
                   </p>
                 </div>
               </Reveal>
