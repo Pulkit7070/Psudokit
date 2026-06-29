@@ -47,23 +47,21 @@ export default function BentoStats() {
 
   return (
     <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 auto-rows-[150px]">
-      {/* GitHub feature tile */}
+      {/* GitHub feature tile (project-exe image background) */}
       <a
         href={GITHUB_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className={`${tile} col-span-2 row-span-2 group bg-gradient-to-br from-[#0d1117] via-[#10231a] to-[#0d3320] flex flex-col justify-between`}
+        className={`${tile} col-span-2 row-span-2 group flex flex-col justify-between`}
       >
-        <div className="absolute -right-6 -top-6 opacity-10 group-hover:opacity-20 transition-opacity">
-          <FaGithub className="w-40 h-40 text-white" />
-        </div>
-        <div className="flex items-center justify-between">
+        <ImageBg src="/bento/project-exe.png" />
+        <div className="relative z-10 flex items-center justify-between">
           <FaGithub className="w-7 h-7 text-white" />
-          <FaArrowUpRightFromSquare className="w-3.5 h-3.5 text-white/40 group-hover:text-white/80 transition-colors" />
+          <FaArrowUpRightFromSquare className="w-3.5 h-3.5 text-white/50 group-hover:text-white transition-colors" />
         </div>
-        <div>
+        <div className="relative z-10">
           <div className="text-2xl sm:text-3xl font-semibold text-white">GitHub</div>
-          <div className="text-sm text-emerald-300/70 mt-1">open source &amp; late-night side quests</div>
+          <div className="text-sm text-white/60 mt-1">open source &amp; late-night side quests</div>
         </div>
       </a>
 
@@ -86,28 +84,34 @@ export default function BentoStats() {
         </div>
       </div>
 
-      {/* Image tiles */}
-      <ImageTile src="/bento/cat.png" alt="" />
-      <ImageTile src="/bento/project-exe.png" alt="" caption="project.exe" />
-
-      {/* WakaTime tile */}
-      <div className={`${tile} col-span-2 bg-gradient-to-br from-[#1e1b4b] to-[#0f172a] flex flex-col justify-between`}>
-        <div className="flex items-center gap-2 text-indigo-300/70 text-xs font-mono">
+      {/* WakaTime tile (take-care image background) */}
+      <div className={`${tile} col-span-2 group flex flex-col justify-between`}>
+        <ImageBg src="/bento/take-care.png" />
+        <div className="relative z-10 flex items-center gap-2 text-white/70 text-xs font-mono">
           <span>{'</>'}</span>
           <span>wakatime</span>
         </div>
-        <div>
+        <div className="relative z-10">
           <div className="text-3xl sm:text-4xl font-semibold text-white tracking-tight">
             {waka === null ? '—' : waka.allTimeText}
           </div>
-          <div className="text-xs text-white/40 mt-1">
+          <div className="text-xs text-white/60 mt-1">
             total coded · {waka === null ? '—' : waka.totalText} last 7 days
           </div>
         </div>
       </div>
 
-      {/* Image tile */}
-      <ImageTile src="/bento/take-care.png" alt="" />
+      {/* X tile (cat image background) */}
+      <a
+        href={X_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`${tile} col-span-1 group flex flex-col items-center justify-center gap-2`}
+      >
+        <ImageBg src="/bento/cat.png" />
+        <FaXTwitter className="relative z-10 w-6 h-6 text-white group-hover:scale-110 transition-transform drop-shadow-lg" />
+        <span className="relative z-10 text-xs text-white/80 drop-shadow">the unfiltered one</span>
+      </a>
 
       {/* LinkedIn tile */}
       <Social
@@ -116,45 +120,22 @@ export default function BentoStats() {
         icon={<FaLinkedin className="w-6 h-6 text-[#4aa3f0]" />}
         label="the formal one"
       />
-
-      {/* X tile */}
-      <a
-        href={X_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={`${tile} col-span-2 bg-gradient-to-br from-[#1a1a1a] to-[#000000] flex flex-col items-center justify-center gap-2 group`}
-      >
-        <FaXTwitter className="w-6 h-6 text-white group-hover:scale-110 transition-transform" />
-        <span className="text-xs text-white/50">the unfiltered one</span>
-      </a>
     </div>
   )
 }
 
-function ImageTile({
-  src,
-  alt,
-  caption,
-}: {
-  src: string
-  alt: string
-  caption?: string
-}) {
+function ImageBg({ src }: { src: string }) {
   return (
-    <div className="relative col-span-1 overflow-hidden rounded-2xl border border-white/10 group transition-transform duration-300 hover:-translate-y-0.5">
+    <>
       <Image
         src={src}
-        alt={alt}
+        alt=""
         fill
         sizes="(max-width: 1024px) 50vw, 25vw"
         className="object-cover transition-transform duration-500 group-hover:scale-105"
       />
-      {caption && (
-        <span className="absolute bottom-2 left-2 text-[10px] font-mono text-white/80 bg-black/40 px-1.5 py-0.5 rounded backdrop-blur-sm">
-          {caption}
-        </span>
-      )}
-    </div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/55 to-black/30" />
+    </>
   )
 }
 
