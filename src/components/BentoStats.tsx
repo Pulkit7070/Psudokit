@@ -62,7 +62,7 @@ export default function BentoStats() {
         </div>
         <div>
           <div className="text-2xl sm:text-3xl font-semibold text-white">GitHub</div>
-          <div className="text-sm text-emerald-300/70 mt-1">my code playground, building in public</div>
+          <div className="text-sm text-emerald-300/70 mt-1">open source &amp; late-night side quests</div>
         </div>
       </a>
 
@@ -106,7 +106,7 @@ export default function BentoStats() {
         href={LINKEDIN_URL}
         gradient="from-[#0a66c2]/40 to-[#0a1a2f]"
         icon={<FaLinkedin className="w-6 h-6 text-[#4aa3f0]" />}
-        label="(sometimes ;)"
+        label="the formal one"
       />
 
       {/* X tile */}
@@ -114,7 +114,7 @@ export default function BentoStats() {
         href={X_URL}
         gradient="from-[#1a1a1a] to-[#000000]"
         icon={<FaXTwitter className="w-6 h-6 text-white" />}
-        label="(serious stuff)"
+        label="the unfiltered one"
       />
     </div>
   )
