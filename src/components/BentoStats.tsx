@@ -116,18 +116,6 @@ export default function BentoStats() {
         icon={<FaXTwitter className="w-6 h-6 text-white" />}
         label="(serious stuff)"
       />
-
-      {/* Identity tile */}
-      <div className={`${tile} col-span-2 bg-gradient-to-br from-[#2a1a0f] via-[#1c1c1c] to-[#0f0f0f] flex flex-col justify-center`}>
-        <div className="text-2xl sm:text-3xl font-semibold text-white">@psudokit</div>
-        <div className="text-sm text-orange-300/60 mt-1">offchain, somewhere building the next thing</div>
-      </div>
-
-      {/* Accent / location tile */}
-      <div className={`${tile} col-span-2 bg-gradient-to-br from-[#3b0764] via-[#1e1b4b] to-[#0f172a] flex flex-col justify-center`}>
-        <div className="text-lg sm:text-xl font-medium text-white">Currently shipping</div>
-        <div className="text-sm text-fuchsia-300/60 mt-1">open to collabs and cool problems</div>
-      </div>
     </div>
   )
 }
