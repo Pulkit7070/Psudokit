@@ -103,9 +103,6 @@ export default function CallToAction({
             © {new Date().getFullYear()} Pulkit Saraf. All rights reserved.
           </div>
           <div className="text-sm dark:text-white/30 text-black/30">
-            Built with Next.js, TypeScript, and Tailwind CSS
-          </div>
-          <div className="text-sm dark:text-white/30 text-black/30">
             Designed & Developed with ❤️
           </div>
           

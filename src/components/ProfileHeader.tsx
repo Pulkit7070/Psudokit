@@ -2,6 +2,7 @@
 import { FaLinkedin, FaXTwitter, FaGithub, FaPaperclip } from "react-icons/fa6";
 import { Tooltip } from "./ui/tooltip-card";
 import Image from "next/image";
+import SpotifyNowPlaying from "./SpotifyNowPlaying";
 
 interface ProfileHeaderProps {
   name?: string
@@ -46,6 +47,7 @@ export default function ProfileHeader({
           <p className="opacity-40 text-[14px]">
             {age} • {title}
           </p>
+          <SpotifyNowPlaying />
         </div>
         <div className="flex justify-start space-x-4 mt-3 sm:mt-0 px-0">
           {socialLinks.github && (
