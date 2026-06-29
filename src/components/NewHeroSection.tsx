@@ -192,24 +192,6 @@ export default function NewHeroSection() {
                 <SectionBorder className="mt-0 pt-0" />
               </Reveal>
 
-              {/* Quote */}
-              <Reveal delay={0.1} duration={0.6} amount={0.4}>
-                <div className="sm:px-12 px-6 py-10 sm:py-14 text-center">
-                  <p className="font-[family-name:var(--font-instrument-serif)] text-lg sm:text-xl italic text-neutral-700 dark:text-neutral-300 leading-relaxed max-w-2xl mx-auto">
-                    &ldquo;Any fool can write code that a computer can
-                    understand. Good programmers write code that humans can
-                    understand.&rdquo;
-                  </p>
-                  <p className="text-sm text-neutral-400 dark:text-neutral-500 mt-4">
-                    Martin Fowler
-                  </p>
-                </div>
-              </Reveal>
-
-              <Reveal delay={0.05} duration={0.4} y={15} amount={0.8}>
-                <SectionBorder className="mt-0 pt-0" />
-              </Reveal>
-
               {/* Open Source Contributions Section */}
               {/* moved to /opensource page */}
 

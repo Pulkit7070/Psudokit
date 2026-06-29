@@ -87,6 +87,16 @@ export default function CallToAction({
         </a>
       </div>
 
+      <div className="mt-10 sm:mt-14 text-center w-full">
+        <p className="font-[family-name:var(--font-instrument-serif)] text-lg sm:text-xl italic text-neutral-700 dark:text-neutral-300 leading-relaxed max-w-2xl mx-auto">
+          &ldquo;Any fool can write code that a computer can understand. Good
+          programmers write code that humans can understand.&rdquo;
+        </p>
+        <p className="text-sm text-neutral-400 dark:text-neutral-500 mt-4">
+          Martin Fowler
+        </p>
+      </div>
+
       <div className="mt-10 sm:mt-16 pt-8 sm:pt-10 border-t border-gray-200 dark:border-gray-800 w-full">
         <div className="flex flex-col space-y-3 sm:space-y-4 text-center sm:text-left">
           <div className="text-md dark:text-white/40 text-black/40">
