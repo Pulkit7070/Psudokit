@@ -1,8 +1,7 @@
 import { NextResponse } from 'next/server'
 
-// Cache the WakaTime response for 30 minutes so we don't hit their API on
-// every page load.
-export const revalidate = 1800
+// Cache for 15 minutes so we don't hit WakaTime on every page load.
+export const revalidate = 900
 
 interface WakaLanguage {
   name: string
@@ -10,6 +9,9 @@ interface WakaLanguage {
   text: string
 }
 
+// Use the live `summaries` endpoint instead of `stats/last_7_days`: the stats
+// endpoint is pre-aggregated and lags (often 0 for a while), while summaries
+// returns real-time data.
 export async function GET() {
   const key = process.env.WAKATIME_API_KEY
   if (!key) {
@@ -19,48 +21,45 @@ export async function GET() {
     )
   }
 
+  const end = new Date()
+  const start = new Date()
+  start.setDate(end.getDate() - 6)
+  const fmt = (d: Date) => d.toISOString().slice(0, 10)
+
   const auth = Buffer.from(key).toString('base64')
-  const headers = { Authorization: `Basic ${auth}` }
+  const res = await fetch(
+    `https://wakatime.com/api/v1/users/current/summaries?start=${fmt(start)}&end=${fmt(end)}`,
+    { headers: { Authorization: `Basic ${auth}` }, next: { revalidate: 900 } },
+  )
 
-  const [statsRes, todayRes] = await Promise.all([
-    fetch('https://wakatime.com/api/v1/users/current/stats/last_7_days', {
-      headers,
-      next: { revalidate: 1800 },
-    }),
-    fetch(
-      'https://wakatime.com/api/v1/users/current/all_time_since_today',
-      { headers, next: { revalidate: 1800 } },
-    ),
-  ])
-
-  if (!statsRes.ok) {
+  if (!res.ok) {
     return NextResponse.json(
-      { error: `WakaTime API returned ${statsRes.status}` },
+      { error: `WakaTime API returned ${res.status}` },
       { status: 502 },
     )
   }
 
-  const { data } = await statsRes.json()
-  let allTimeText = '0 secs'
-  if (todayRes.ok) {
-    const todayJson = await todayRes.json()
-    allTimeText = todayJson.data?.text ?? '0 secs'
-  }
+  const json = await res.json()
+  const totalText: string = json.cumulative_total?.text ?? '0 secs'
+  const totalSeconds: number = json.cumulative_total?.seconds ?? 0
 
-  const languages: WakaLanguage[] = (data.languages ?? [])
+  // Aggregate language seconds across the 7 days.
+  const langSeconds: Record<string, number> = {}
+  for (const day of json.data ?? []) {
+    for (const l of day.languages ?? []) {
+      langSeconds[l.name] = (langSeconds[l.name] ?? 0) + l.total_seconds
+    }
+  }
+  const langTotal = Object.values(langSeconds).reduce((a, b) => a + b, 0) || 1
+  const languages: WakaLanguage[] = Object.entries(langSeconds)
+    .sort((a, b) => b[1] - a[1])
     .slice(0, 5)
-    .map((l: { name: string; percent: number; text: string }) => ({
-      name: l.name,
-      percent: l.percent,
-      text: l.text,
-    }))
+    .map(([name, sec]) => ({ name, percent: (sec / langTotal) * 100, text: '' }))
 
   return NextResponse.json({
-    range: data.human_readable_range ?? 'Last 7 Days',
-    totalText: data.human_readable_total ?? '0 secs',
-    totalSeconds: data.total_seconds ?? 0,
-    dailyAverageText: data.human_readable_daily_average ?? '0 secs',
-    allTimeText,
+    range: 'Last 7 Days',
+    totalText,
+    totalSeconds,
     languages,
   })
 }

@@ -14,7 +14,6 @@ interface GitHubStats {
 
 interface WakaStats {
   totalText: string
-  allTimeText: string
   totalSeconds: number
 }
 
@@ -93,10 +92,10 @@ export default function BentoStats() {
         </div>
         <div className="relative z-10">
           <div className="text-3xl sm:text-4xl font-semibold text-white tracking-tight">
-            {waka === null ? '—' : waka.allTimeText}
+            {waka === null ? '—' : waka.totalText}
           </div>
           <div className="text-xs text-white/60 mt-1">
-            total coded · {waka === null ? '—' : waka.totalText} last 7 days
+            coding time · last 7 days
           </div>
         </div>
       </div>
